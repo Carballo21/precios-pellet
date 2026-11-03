@@ -1,0 +1,308 @@
+{
+ "titulo": "Monitor de precios del pellet · España",
+ "ultima_ronda": null,
+ "num_rondas": 0,
+ "ipb_vigente": {
+  "trimestre": "3T2026",
+  "inicio": "2026-07-01",
+  "saco_eur": 5.92,
+  "saco_eur_t": 394.67,
+  "palet_eur_t": 390.75,
+  "granel_volquete_eur_t": 370.24,
+  "granel_cisterna_eur_t": 382.21,
+  "granel_medio_eur_t": 376.23,
+  "iva": 0.21,
+  "fuente": "https://avebiom.org/wp-content/uploads/2026/10/IPB-indice-precios-PELLET-3T2026.pdf"
+ },
+ "exw_vigente": {
+  "mes": "2026-09",
+  "indice_pct": 143.5,
+  "eur_t": 251.57,
+  "prevision": false,
+  "fuente": "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf"
+ },
+ "kpis": {
+  "saco": null,
+  "palet": null,
+  "granel": null,
+  "exw": {
+   "mes": "2026-09",
+   "indice_pct": 143.5,
+   "eur_t": 251.57,
+   "prevision": false,
+   "fuente": "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf"
+  },
+  "destino_sin_iva": null,
+  "margen": null,
+  "leidos": 0,
+  "total": 0
+ },
+ "mercado": {
+  "saco": [],
+  "palet": [],
+  "granel": [],
+  "origen": []
+ },
+ "referencia": {
+  "saco": [
+   {
+    "x": "2025-04-01",
+    "y": 342.67,
+    "et": "2T2025"
+   },
+   {
+    "x": "2025-07-01",
+    "y": 341.33,
+    "et": "3T2025"
+   },
+   {
+    "x": "2025-10-01",
+    "y": 354.0,
+    "et": "4T2025"
+   },
+   {
+    "x": "2026-01-01",
+    "y": 352.67,
+    "et": "1T2026"
+   },
+   {
+    "x": "2026-04-01",
+    "y": 378.0,
+    "et": "2T2026"
+   },
+   {
+    "x": "2026-07-01",
+    "y": 394.67,
+    "et": "3T2026"
+   }
+  ],
+  "palet": [
+   {
+    "x": "2025-04-01",
+    "y": 329.9,
+    "et": "2T2025"
+   },
+   {
+    "x": "2025-07-01",
+    "y": 335.66,
+    "et": "3T2025"
+   },
+   {
+    "x": "2025-10-01",
+    "y": 345.2,
+    "et": "4T2025"
+   },
+   {
+    "x": "2026-01-01",
+    "y": 349.96,
+    "et": "1T2026"
+   },
+   {
+    "x": "2026-04-01",
+    "y": 372.29,
+    "et": "2T2026"
+   },
+   {
+    "x": "2026-07-01",
+    "y": 390.75,
+    "et": "3T2026"
+   }
+  ],
+  "granel": [
+   {
+    "x": "2025-04-01",
+    "y": 320.3,
+    "et": "2T2025"
+   },
+   {
+    "x": "2025-07-01",
+    "y": 322.86,
+    "et": "3T2025"
+   },
+   {
+    "x": "2025-10-01",
+    "y": 336.91,
+    "et": "4T2025"
+   },
+   {
+    "x": "2026-01-01",
+    "y": 353.99,
+    "et": "1T2026"
+   },
+   {
+    "x": "2026-04-01",
+    "y": 359.38,
+    "et": "2T2026"
+   },
+   {
+    "x": "2026-07-01",
+    "y": 376.23,
+    "et": "3T2026"
+   }
+  ],
+  "origen": [
+   {
+    "x": "2025-01-01",
+    "y": 207.04,
+    "et": "2025-01"
+   },
+   {
+    "x": "2025-02-01",
+    "y": 209.32,
+    "et": "2025-02"
+   },
+   {
+    "x": "2025-03-01",
+    "y": 205.81,
+    "et": "2025-03"
+   },
+   {
+    "x": "2025-04-01",
+    "y": 204.94,
+    "et": "2025-04"
+   },
+   {
+    "x": "2025-05-01",
+    "y": 205.11,
+    "et": "2025-05"
+   },
+   {
+    "x": "2025-06-01",
+    "y": 205.81,
+    "et": "2025-06"
+   },
+   {
+    "x": "2025-07-01",
+    "y": 207.22,
+    "et": "2025-07"
+   },
+   {
+    "x": "2025-08-01",
+    "y": 204.41,
+    "et": "2025-08"
+   },
+   {
+    "x": "2025-09-01",
+    "y": 207.22,
+    "et": "2025-09"
+   },
+   {
+    "x": "2025-10-01",
+    "y": 208.97,
+    "et": "2025-10"
+   },
+   {
+    "x": "2025-11-01",
+    "y": 214.23,
+    "et": "2025-11"
+   },
+   {
+    "x": "2025-12-01",
+    "y": 215.11,
+    "et": "2025-12"
+   },
+   {
+    "x": "2026-01-01",
+    "y": 226.15,
+    "et": "2026-01"
+   },
+   {
+    "x": "2026-02-01",
+    "y": 235.44,
+    "et": "2026-02"
+   },
+   {
+    "x": "2026-03-01",
+    "y": 233.34,
+    "et": "2026-03"
+   },
+   {
+    "x": "2026-04-01",
+    "y": 234.21,
+    "et": "2026-04"
+   },
+   {
+    "x": "2026-05-01",
+    "y": 237.55,
+    "et": "2026-05"
+   },
+   {
+    "x": "2026-06-01",
+    "y": 240.88,
+    "et": "2026-06"
+   },
+   {
+    "x": "2026-07-01",
+    "y": 241.4,
+    "et": "2026-07"
+   },
+   {
+    "x": "2026-08-01",
+    "y": 246.31,
+    "et": "2026-08"
+   },
+   {
+    "x": "2026-09-01",
+    "y": 251.57,
+    "et": "2026-09"
+   },
+   {
+    "x": "2026-10-01",
+    "y": 255.6,
+    "et": "2026-10 (previsión)"
+   }
+  ]
+ },
+ "tabla": [],
+ "alertas": [],
+ "reglas": [
+  {
+   "tipo": "variacion_punto",
+   "activa": true,
+   "umbral_pct": 5
+  },
+  {
+   "tipo": "variacion_media",
+   "activa": true,
+   "umbral_pct": 3
+  },
+  {
+   "tipo": "desviacion_avebiom",
+   "activa": true,
+   "umbral_pct": 10
+  },
+  {
+   "tipo": "precio_objetivo",
+   "activa": true,
+   "max_eur_saco15": 5.0,
+   "max_eur_t_palet": 360,
+   "max_eur_t_granel": 330
+  },
+  {
+   "tipo": "margen_origen_destino",
+   "activa": true,
+   "max_eur_t": 160
+  },
+  {
+   "tipo": "posible_fraude",
+   "activa": true,
+   "pct_bajo_avebiom": 35
+  },
+  {
+   "tipo": "sin_stock",
+   "activa": true,
+   "min_puntos": 6
+  },
+  {
+   "tipo": "fallo_scraper",
+   "activa": true,
+   "fallos_consecutivos": 2
+  },
+  {
+   "tipo": "nuevo_indice_avebiom",
+   "activa": true
+  }
+ ],
+ "medias": {},
+ "medias_ant": {}
+}

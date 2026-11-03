@@ -1,0 +1,63 @@
+# =====================================================================
+#  ALARMAS
+#  Edita los umbrales a tu gusto. Para apagar una alarma: activa: false
+#  Todos los precios se comparan en €/tonelada con IVA, salvo que se diga.
+# =====================================================================
+
+# No repetir la misma alarma antes de N días
+enfriamiento_dias: 4
+
+# Canales de aviso. Las claves secretas NO van aquí: van en los "Secrets"
+# del repositorio de GitHub (ver README).
+canales:
+  telegram: true      # necesita TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID
+  email: false        # necesita SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, EMAIL_TO
+  github_issue: true  # abre un "issue" en tu repo; GitHub te lo manda por email gratis
+
+reglas:
+  # Un punto de venta sube o baja más de X % respecto a la lectura anterior
+  - tipo: variacion_punto
+    activa: true
+    umbral_pct: 5
+
+  # La media del mercado de un formato cambia más de X % frente a la ronda anterior
+  - tipo: variacion_media
+    activa: true
+    umbral_pct: 3
+
+  # La media del mercado se separa más de X % del último índice AVEBIOM
+  - tipo: desviacion_avebiom
+    activa: true
+    umbral_pct: 10
+
+  # Algún punto baja de tu precio objetivo (precios con IVA)
+  - tipo: precio_objetivo
+    activa: true
+    max_eur_saco15: 5.00     # sacos sueltos
+    max_eur_t_palet: 360     # palets
+    max_eur_t_granel: 330    # granel / big bag
+
+  # Diferencia entre media destino (sin IVA) y precio de fábrica EXW de AVEBIOM
+  - tipo: margen_origen_destino
+    activa: true
+    max_eur_t: 160
+
+  # Precio sospechosamente bajo: AVEBIOM alerta de webs falsas que copian a
+  # fabricantes reales y "venden" pellet muy barato que nunca llega
+  - tipo: posible_fraude
+    activa: true
+    pct_bajo_avebiom: 35
+
+  # Muchos puntos sin existencias a la vez (señal de tensión de precios)
+  - tipo: sin_stock
+    activa: true
+    min_puntos: 6
+
+  # Un scraper falla varias veces seguidas (la web habrá cambiado)
+  - tipo: fallo_scraper
+    activa: true
+    fallos_consecutivos: 2
+
+  # AVEBIOM publica un índice nuevo
+  - tipo: nuevo_indice_avebiom
+    activa: true

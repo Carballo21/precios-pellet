@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor de precios del pellet</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --page: #f4f3f0;
+    --surface-1: #fcfcfb;
+    --surface-2: #f0efec;
+    --border: #e2e0da;
+    --grid: #ebe9e4;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #77756f;
+    --series-1: #2a78d6;
+    --series-2: #eb6834;
+    --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
+    --focus: #2a78d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --page: #121211; --surface-1: #1a1a19; --surface-2: #242422; --border: #33332f; --grid: #2a2a27;
+      --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #94938a;
+      --series-1: #3987e5; --series-2: #d95926;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --page: #121211; --surface-1: #1a1a19; --surface-2: #242422; --border: #33332f; --grid: #2a2a27;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #94938a;
+    --series-1: #3987e5; --series-2: #d95926;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .viz-root { background: var(--page); color: var(--text-primary); min-height: 100vh;
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 16px 48px; }
+  header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: flex-end; margin-bottom: 20px; }
+  h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 16px; margin: 0 0 4px; }
+  .sub { color: var(--text-secondary); margin: 0; }
+  .muted { color: var(--text-muted); }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  section { margin-top: 24px; }
+  .sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+  button.theme { background: var(--surface-1); color: var(--text-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; cursor: pointer; font: inherit; }
+  button.theme:focus-visible, select:focus-visible, input:focus-visible, th button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  /* KPI */
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+  .kpi .lbl { color: var(--text-secondary); font-size: 13px; }
+  .kpi .val { font-size: 26px; font-weight: 650; letter-spacing: -0.02em; margin: 2px 0; font-variant-numeric: tabular-nums; }
+  .kpi .val small { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+  .kpi .det { color: var(--text-muted); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+
+  /* gráficos */
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; color: var(--text-secondary); font-size: 13px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 16px; height: 0; border-top: 2px solid; display: inline-block; }
+  .sw.dot { position: relative; }
+  .sw.dot::after { content: ""; position: absolute; left: 4px; top: -5px; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .grid4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 760px) { .grid4 { grid-template-columns: 1fr; } }
+  .chart { position: relative; }
+  .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .chart .ttl { font-weight: 600; margin-bottom: 2px; }
+  .chart .unit { color: var(--text-muted); font-size: 12.5px; margin-bottom: 6px; }
+  .tick { fill: var(--text-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .tip { position: absolute; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 10px; font-size: 12.5px; box-shadow: 0 4px 16px rgba(0,0,0,.12); min-width: 170px; display: none; z-index: 5; }
+  .tip .r { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
+  .tip .k { display: inline-flex; align-items: center; gap: 6px; color: var(--text-secondary); }
+  .empty { color: var(--text-muted); padding: 40px 0; text-align: center; }
+
+  /* tabla */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .filters select, .filters input { background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border);
+    border-radius: 8px; padding: 6px 8px; font: inherit; }
+  .filters input { min-width: 180px; }
+  .tbl-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+  th { color: var(--text-secondary); font-weight: 600; position: sticky; top: 0; background: var(--surface-1); }
+  th button { all: unset; cursor: pointer; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  td a { color: inherit; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 2px; }
+  td .prod { color: var(--text-secondary); font-size: 12px; }
+  .st { display: inline-flex; align-items: center; gap: 6px; }
+  .st i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .pill { font-size: 11.5px; padding: 1px 7px; border-radius: 999px; background: var(--surface-2); color: var(--text-secondary); }
+  .alist { list-style: none; margin: 0; padding: 0; }
+  .alist li { padding: 10px 0; border-bottom: 1px solid var(--grid); }
+  .alist li:last-child { border-bottom: 0; }
+  .alist .d { color: var(--text-muted); font-size: 12.5px; white-space: pre-line; }
+  .two { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+  .rules { margin: 0; padding-left: 18px; color: var(--text-secondary); }
+  .rules li { margin: 4px 0; }
+  footer { margin-top: 28px; color: var(--text-muted); font-size: 12.5px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="viz-root">
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="titulo"></h1>
+      <p class="sub" id="subtitulo"></p>
+    </div>
+    <button class="theme" id="tema" type="button" aria-label="Cambiar tema claro u oscuro">◐ Tema</button>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section>
+    <div class="sec-head">
+      <div>
+        <h2>Mercado frente a AVEBIOM</h2>
+        <p class="sub">Media de los puntos vigilados en cada ronda, comparada con el índice publicado.</p>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><i class="sw dot" style="color:var(--series-1)"></i>Media del mercado (este monitor)</span>
+        <span><i class="sw" style="color:var(--series-2)"></i>Índice AVEBIOM</span>
+      </div>
+    </div>
+    <div class="grid4" id="graficos"></div>
+  </section>
+
+  <section class="card">
+    <div class="sec-head">
+      <div>
+        <h2>Puntos de venta · última ronda</h2>
+        <p class="sub" id="tabla-sub"></p>
+      </div>
+    </div>
+    <div class="filters">
+      <select id="f-tipo" aria-label="Filtrar por tipo"><option value="">Origen y destino</option><option value="destino">Destino (consumidor)</option><option value="origen">Origen (fábrica)</option></select>
+      <select id="f-formato" aria-label="Filtrar por formato"><option value="">Todos los formatos</option><option value="saco">Saco</option><option value="palet">Palet</option><option value="bigbag">Big bag</option><option value="granel">Granel</option></select>
+      <select id="f-region" aria-label="Filtrar por región"><option value="">Todas las regiones</option></select>
+      <input id="f-texto" type="search" placeholder="Buscar tienda o marca" aria-label="Buscar">
+    </div>
+    <div class="tbl-wrap"><table id="tabla"></table></div>
+  </section>
+
+  <section class="two">
+    <div class="card">
+      <h2>Alertas recientes</h2>
+      <ul class="alist" id="alertas"></ul>
+    </div>
+    <div class="card">
+      <h2>Alarmas configuradas</h2>
+      <p class="sub" style="margin-bottom:8px">Se cambian en <code>config/alertas.yaml</code>.</p>
+      <ul class="rules" id="reglas"></ul>
+    </div>
+  </section>
+
+  <footer id="pie"></footer>
+</div>
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+const D = /*__DATOS__*/null;
+const $ = (s) => document.querySelector(s);
+const fmtN = (v, d = 0) => v == null ? "—" : v.toLocaleString("es-ES", { minimumFractionDigits: d, maximumFractionDigits: d });
+const fmtPct = (v) => v == null ? "—" : (v > 0 ? "▲ +" : v < 0 ? "▼ " : "") + fmtN(v, 1) + " %";
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fecha = (iso) => new Date(iso + (iso.length === 10 ? "T00:00:00" : "")).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
+const FMT = { saco: "Saco", palet: "Palet", bigbag: "Big bag", granel: "Granel" };
+
+// ---------- tema
+(() => {
+  const root = document.documentElement;
+  try { const t = localStorage.getItem("tema"); if (t) root.dataset.theme = t; } catch (e) {}
+  $("#tema").addEventListener("click", () => {
+    const osc = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = osc ? "light" : "dark";
+    try { localStorage.setItem("tema", root.dataset.theme); } catch (e) {}
+    pintarGraficos();
+  });
+})();
+
+// ---------- cabecera
+$("#titulo").textContent = D.titulo;
+$("#subtitulo").textContent = D.ultima_ronda
+  ? `Última ronda: ${fecha(D.ultima_ronda.slice(0, 10))} · ${D.kpis.leidos} de ${D.kpis.total} puntos leídos · ${D.num_rondas} rondas guardadas · referencia AVEBIOM ${D.ipb_vigente ? D.ipb_vigente.trimestre : "—"}`
+  : "Todavía no hay datos: se llenará con la primera ronda.";
+
+// ---------- KPIs
+function tile(lbl, val, unidad, det) {
+  return `<div class="card kpi"><div class="lbl">${lbl}</div><div class="val">${val}${unidad ? ` <small>${unidad}</small>` : ""}</div><div class="det">${det}</div></div>`;
+}
+(() => {
+  const k = D.kpis, q = D.ipb_vigente ? D.ipb_vigente.trimestre : "";
+  const t = [];
+  if (k.saco) t.push(tile("Saco 15 kg · media", fmtN(k.saco.valor * 15 / 1000, 2), "€/saco",
+    `AVEBIOM ${q}: ${fmtN(k.saco.ref * 15 / 1000, 2)} € (${fmtPct(k.saco.dev_pct)})<br>vs ronda anterior: ${fmtPct(k.saco.var_pct)} · ${k.saco.n} punto${k.saco.n === 1 ? "" : "s"}`));
+  if (k.palet) t.push(tile("Palet · media", fmtN(k.palet.valor), "€/t",
+    `AVEBIOM ${q}: ${fmtN(k.palet.ref)} €/t (${fmtPct(k.palet.dev_pct)})<br>vs ronda anterior: ${fmtPct(k.palet.var_pct)} · ${k.palet.n} punto${k.palet.n === 1 ? "" : "s"}`));
+  if (k.granel) t.push(tile("Granel y big bag · media", fmtN(k.granel.valor), "€/t",
+    `AVEBIOM ${q}: ${fmtN(k.granel.ref)} €/t (${fmtPct(k.granel.dev_pct)})<br>vs ronda anterior: ${fmtPct(k.granel.var_pct)} · ${k.granel.n} punto${k.granel.n === 1 ? "" : "s"}`));
+  if (k.exw) t.push(tile("Origen · fábrica (EXW)", fmtN(k.exw.eur_t), "€/t",
+    `AVEBIOM ${k.exw.mes}: índice ${fmtN(k.exw.indice_pct, 1)} %<br>sin IVA, camión completo`));
+  if (k.margen != null) t.push(tile("Diferencial destino − origen", fmtN(k.margen), "€/t",
+    `Media destino sin IVA ${fmtN(k.destino_sin_iva)} €/t<br>menos precio en fábrica`));
+  $("#kpis").innerHTML = t.join("") || `<div class="card muted">Sin datos todavía.</div>`;
+})();
+
+// ---------- gráficos (múltiplos pequeños, un solo eje Y cada uno)
+const PANELES = [
+  { id: "saco", t: "Saco 15 kg", u: "€/t con IVA (precio del saco × 66,7)" },
+  { id: "palet", t: "Palet de sacos", u: "€/t con IVA" },
+  { id: "granel", t: "Granel y big bag", u: "€/t con IVA · AVEBIOM: media volquete y cisterna" },
+  { id: "origen", t: "Origen · venta de fábrica", u: "€/t sin IVA · AVEBIOM: índice EXW mensual" },
+];
+const css = (v) => getComputedStyle($(".viz-root")).getPropertyValue(v).trim();
+const ts = (iso) => new Date(iso.slice(0, 10) + "T00:00:00").getTime();
+
+function niceTicks(min, max, n = 4) {
+  const span = max - min || 1, step0 = span / n, mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= step0);
+  const a = Math.floor(min / step) * step, b = Math.ceil(max / step) * step, out = [];
+  for (let v = a; v <= b + 1e-9; v += step) out.push(+v.toFixed(6));
+  return out;
+}
+function stepAt(ref, t) { let v = null; for (const p of ref) if (ts(p.x) <= t) v = p; return v; }
+
+function grafico(cont, panel) {
+  const m = (D.mercado[panel.id] || []), ref = (D.referencia[panel.id] || []);
+  cont.innerHTML = `<div class="ttl">${panel.t}</div><div class="unit">${panel.u}</div>`;
+  if (!m.length && !ref.length) { cont.insertAdjacentHTML("beforeend", `<div class="empty">Sin datos</div>`); return; }
+  const W = Math.max(280, cont.clientWidth), H = 220, L = 46, R = 12, T = 8, B = 26;
+  const hoy = D.ultima_ronda ? ts(D.ultima_ronda) : Date.now();
+  const xs = [...m, ...ref].map((p) => ts(p.x));
+  // ventana: unos 6 meses de contexto AVEBIOM antes de la primera lectura propia
+  const x0 = m.length ? Math.max(Math.min(...xs), ts(m[0].x) - 86400000 * 180) : Math.min(...xs), x1 = Math.max(hoy, ...xs) + 86400000 * 10;
+  const vis = (p, i, arr) => ts(p.x) >= x0 || (arr[i + 1] && ts(arr[i + 1].x) > x0);
+  const ys = [...m, ...ref.filter(vis)].map((p) => p.y);
+  const tk = niceTicks(Math.min(...ys) * 0.97, Math.max(...ys) * 1.03);
+  const y0 = tk[0], y1 = tk[tk.length - 1];
+  const X = (t) => L + (t - x0) / (x1 - x0) * (W - L - R), Y = (v) => T + (1 - (v - y0) / (y1 - y0)) * (H - T - B);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${panel.t}: media del mercado frente al índice AVEBIOM">`;
+  tk.forEach((v) => { s += `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${css("--grid")}" stroke-width="1"/><text class="tick" x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${fmtN(v)}</text>`; });
+  // etiquetas de eje X: inicio de cada trimestre
+  const d0 = new Date(x0); let d = new Date(d0.getFullYear(), Math.floor(d0.getMonth() / 3) * 3, 1);
+  while (d.getTime() <= x1) {
+    const t = d.getTime();
+    if (t >= x0) s += `<text class="tick" x="${X(t)}" y="${H - 6}" text-anchor="middle">${d.toLocaleDateString("es-ES", { month: "short" })} ${String(d.getFullYear()).slice(2)}</text>`;
+    d = new Date(d.getFullYear(), d.getMonth() + 3, 1);
+  }
+  // referencia AVEBIOM en escalón (vale hasta el siguiente dato)
+  if (ref.length) {
+    let p = "";
+    ref.forEach((r, i) => {
+      if (!vis(r, i, ref)) return;
+      const xa = X(Math.max(ts(r.x), x0)), xb = i < ref.length - 1 ? X(ts(ref[i + 1].x)) : X(x1);
+      p += (p ? `L${xa},${Y(r.y)}` : `M${xa},${Y(r.y)}`) + `L${xb},${Y(r.y)}`;
+    });
+    s += `<path d="${p}" fill="none" stroke="${css("--series-2")}" stroke-width="2" stroke-linejoin="round"/>`;
+  }
+  // mercado
+  if (m.length) {
+    if (m.length > 1) s += `<path d="${m.map((p, i) => (i ? "L" : "M") + X(ts(p.x)) + "," + Y(p.y)).join("")}" fill="none" stroke="${css("--series-1")}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    m.forEach((p) => { s += `<circle cx="${X(ts(p.x))}" cy="${Y(p.y)}" r="4" fill="${css("--series-1")}" stroke="${css("--surface-1")}" stroke-width="2"/>`; });
+    const u = m[m.length - 1];
+    s += `<text class="tick" x="${Math.min(X(ts(u.x)) + 6, W - R)}" y="${Y(u.y) - 12}" text-anchor="${X(ts(u.x)) > W - 70 ? "end" : "start"}" style="fill:${css("--text-primary")};font-weight:600">${fmtN(u.y)}</text>`;
+  } else {
+    s += `<text class="tick" x="${(L + W - R) / 2}" y="${T + 16}" text-anchor="middle">Aún sin lecturas del mercado</text>`;
+  }
+  s += `<line class="cross" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="${css("--text-muted")}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
+  s += `<rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent" class="hit"/></svg>`;
+  cont.insertAdjacentHTML("beforeend", s);
+
+  // hover: cruz + tooltip con el punto más cercano
+  const svg = cont.querySelector("svg"), cross = svg.querySelector(".cross"), tip = $("#tip");
+  const objetivos = [...new Set([...m.map((p) => ts(p.x)), ...ref.map((p) => ts(p.x)).filter((t) => t >= x0)])].sort((a, b) => a - b);
+  function mover(ev) {
+    const rc = svg.getBoundingClientRect(), px = (ev.clientX - rc.left) * (W / rc.width);
+    const t = x0 + (px - L) / (W - L - R) * (x1 - x0);
+    const near = objetivos.reduce((a, b) => Math.abs(b - t) < Math.abs(a - t) ? b : a, objetivos[0]);
+    cross.setAttribute("x1", X(near)); cross.setAttribute("x2", X(near)); cross.setAttribute("visibility", "visible");
+    const pm = m.filter((p) => ts(p.x) === near).pop(), pr = stepAt(ref, near);
+    tip.innerHTML = `<div style="font-weight:600;margin-bottom:4px">${fecha(new Date(near).toISOString().slice(0, 10))}</div>` +
+      (pm ? `<div class="r"><span class="k"><i class="sw dot" style="color:var(--series-1)"></i>Mercado (${pm.n})</span><b>${fmtN(pm.y)} €/t</b></div>` : "") +
+      (pr ? `<div class="r"><span class="k"><i class="sw" style="color:var(--series-2)"></i>AVEBIOM ${esc(pr.et)}</span><b>${fmtN(pr.y)} €/t</b></div>` : "") +
+      (pm && pr ? `<div class="r muted"><span>Diferencia</span><span>${fmtPct((pm.y - pr.y) / pr.y * 100)}</span></div>` : "");
+    tip.style.display = "block";
+    const tw = tip.offsetWidth, x = ev.clientX + 14 + tw > innerWidth ? ev.clientX - tw - 14 : ev.clientX + 14;
+    tip.style.left = x + scrollX + "px"; tip.style.top = ev.clientY + scrollY - 10 + "px";
+  }
+  svg.addEventListener("pointermove", mover);
+  svg.addEventListener("pointerleave", () => { tip.style.display = "none"; cross.setAttribute("visibility", "hidden"); });
+}
+function pintarGraficos() {
+  const g = $("#graficos"); g.innerHTML = "";
+  PANELES.forEach((p) => { const c = document.createElement("div"); c.className = "card chart"; g.appendChild(c); grafico(c, p); });
+}
+pintarGraficos();
+let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(pintarGraficos, 150); });
+
+// ---------- tabla
+const COLS = [
+  { k: "tienda", t: "Tienda / producto" }, { k: "tipo", t: "Tipo" }, { k: "formato", t: "Formato" },
+  { k: "region", t: "Región" }, { k: "precio", t: "Precio web", n: 1 }, { k: "eur_t", t: "€/t con IVA", n: 1 },
+  { k: "eur_saco", t: "€ saco eq.", n: 1 }, { k: "var_pct", t: "vs anterior", n: 1 },
+  { k: "dev_pct", t: "vs AVEBIOM", n: 1 }, { k: "estado", t: "Estado" },
+];
+let orden = { k: "eur_t", asc: true };
+const regiones = [...new Set(D.tabla.map((f) => f.region))].sort();
+$("#f-region").insertAdjacentHTML("beforeend", regiones.map((r) => `<option>${esc(r)}</option>`).join(""));
+
+function estadoCelda(f) {
+  if (f.estado === "error") return `<span class="st" title="${esc(f.error)}"><i style="background:var(--critical)"></i>✕ Error</span>`;
+  if (f.estado === "anomalo") return `<span class="st" title="${esc(f.error)}"><i style="background:var(--serious)"></i>! Anómalo</span>`;
+  if (f.sospechoso === "si") return `<span class="st" title="Muy por debajo del índice: comprueba que la web es legítima"><i style="background:var(--critical)"></i>⚠ Sospechoso</span>`;
+  if (f.disponible === "no") return `<span class="st"><i style="background:var(--warning)"></i>○ Sin stock</span>`;
+  return `<span class="st"><i style="background:var(--good)"></i>✓ OK</span>`;
+}
+function pintarTabla() {
+  const ft = $("#f-tipo").value, ff = $("#f-formato").value, fr = $("#f-region").value, fx = $("#f-texto").value.toLowerCase();
+  let filas = D.tabla.filter((f) => (!ft || f.tipo === ft) && (!ff || f.formato === ff) && (!fr || f.region === fr) &&
+    (!fx || (f.tienda + " " + f.nombre).toLowerCase().includes(fx)));
+  filas.sort((a, b) => { const va = a[orden.k], vb = b[orden.k]; if (va == null) return 1; if (vb == null) return -1;
+    return (va > vb ? 1 : va < vb ? -1 : 0) * (orden.asc ? 1 : -1); });
+  const h = `<thead><tr>${COLS.map((c) => `<th class="${c.n ? "n" : ""}" aria-sort="${orden.k === c.k ? (orden.asc ? "ascending" : "descending") : "none"}"><button data-k="${c.k}">${c.t}${orden.k === c.k ? (orden.asc ? " ↑" : " ↓") : ""}</button></th>`).join("")}</tr></thead>`;
+  const b = filas.map((f) => `<tr>
+    <td><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.tienda)}</a><div class="prod">${esc(f.nombre)}</div></td>
+    <td><span class="pill">${f.tipo === "origen" ? "Origen" : "Destino"}</span></td>
+    <td>${FMT[f.formato] || esc(f.formato)}${f.kg ? ` <span class="muted">${fmtN(f.kg)} kg</span>` : ""}</td>
+    <td>${esc(f.region)}</td>
+    <td class="n">${f.precio != null ? fmtN(f.precio, 2) + " €" : "—"}${f.iva_incluido === "no" ? ' <span class="muted">+IVA</span>' : ""}</td>
+    <td class="n">${fmtN(f.eur_t)}</td>
+    <td class="n">${fmtN(f.eur_saco, 2)}</td>
+    <td class="n">${fmtPct(f.var_pct)}</td>
+    <td class="n" title="${f.tipo === "origen" ? "Comparado sin IVA con el índice EXW de fábrica" : "Comparado con IVA con el índice de consumidor"}">${fmtPct(f.dev_pct)}</td>
+    <td>${estadoCelda(f)}</td></tr>`).join("");
+  $("#tabla").innerHTML = h + `<tbody>${b || `<tr><td colspan="${COLS.length}" class="muted">Ningún punto coincide con el filtro.</td></tr>`}</tbody>`;
+  $("#tabla-sub").textContent = `${filas.length} de ${D.tabla.length} puntos · pulsa una columna para ordenar · "vs AVEBIOM": destino con IVA frente al índice ${D.ipb_vigente ? D.ipb_vigente.trimestre : ""}; origen sin IVA frente al EXW ${D.exw_vigente ? D.exw_vigente.mes : ""}`;
+  $("#tabla").querySelectorAll("th button").forEach((bt) => bt.addEventListener("click", () => {
+    orden = { k: bt.dataset.k, asc: orden.k === bt.dataset.k ? !orden.asc : true }; pintarTabla(); }));
+}
+["#f-tipo", "#f-formato", "#f-region", "#f-texto"].forEach((s) => $(s).addEventListener("input", pintarTabla));
+pintarTabla();
+
+// ---------- alertas y reglas
+const ICO = { info: "ℹ️", aviso: "⚠️", importante: "🚨" };
+$("#alertas").innerHTML = D.alertas.length
+  ? D.alertas.map((a) => `<li><div>${ICO[a.nivel] || "•"} ${esc(a.titulo)}</div><div class="d">${esc(fecha(a.fecha.slice(0, 10)))}${a.detalle ? " · " + esc(a.detalle) : ""}</div></li>`).join("")
+  : `<li class="muted">Sin alertas por ahora.</li>`;
+const RTXT = {
+  variacion_punto: (r) => `Un punto cambia ≥ ${r.umbral_pct} % entre rondas`,
+  variacion_media: (r) => `La media de un formato cambia ≥ ${r.umbral_pct} %`,
+  desviacion_avebiom: (r) => `La media se aleja ≥ ${r.umbral_pct} % de AVEBIOM`,
+  precio_objetivo: (r) => `Precio objetivo: saco ≤ ${r.max_eur_saco15} €, palet ≤ ${r.max_eur_t_palet} €/t, granel ≤ ${r.max_eur_t_granel} €/t`,
+  margen_origen_destino: (r) => `Diferencial destino − origen ≥ ${r.max_eur_t} €/t`,
+  posible_fraude: (r) => `Precio ${r.pct_bajo_avebiom} % o más por debajo de AVEBIOM (posible fraude)`,
+  sin_stock: (r) => `${r.min_puntos} o más puntos sin existencias`,
+  fallo_scraper: (r) => `Un lector falla ${r.fallos_consecutivos} veces seguidas`,
+  nuevo_indice_avebiom: () => `AVEBIOM publica un índice nuevo`,
+};
+$("#reglas").innerHTML = D.reglas.map((r) => `<li>${r.activa === false ? '<span class="muted">(apagada)</span> ' : ""}${esc((RTXT[r.tipo] || (() => r.tipo))(r))}</li>`).join("");
+
+$("#pie").innerHTML = `Referencias: <a href="${esc(D.ipb_vigente ? D.ipb_vigente.fuente : "#")}">Índice de precios del pellet de AVEBIOM</a> (trimestral, consumidor final, IVA y transporte medio de 200 km en granel incluidos) e índice EXW de fábrica (mensual, sin IVA, camión completo de ENplus A1; €/t calculado sobre la base 100 % del 1T2019). Los precios del monitor son los publicados en cada web; se excluyen de las medias las lecturas con error, anómalas o sospechosas.`;
+</script>
+</body>
+</html>

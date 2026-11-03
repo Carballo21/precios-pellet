@@ -1,0 +1,45 @@
+# Ajustes generales del monitor de precios
+
+descarga:
+  # Pausa aleatoria entre peticiones (segundos) para no saturar las webs
+  pausa_min: 3
+  pausa_max: 7
+  timeout: 30
+  reintentos: 2
+  respetar_robots_txt: true
+  # Si la descarga normal falla o no encuentra precio, reintenta con un
+  # navegador real (Playwright). Más lento, pero salva webs con JavaScript.
+  playwright_si_falla: true
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+
+# Tipo de IVA del pellet por fechas (el más reciente cuya fecha "desde" ya
+# haya pasado es el que se aplica). Se usa para pasar precios con/sin IVA.
+# El Gobierno lo bajó al 10 % de forma temporal en la primavera de 2026 y
+# volvió al 21 % el 1 de julio de 2026. Si cambia, añade una línea.
+#   Ejemplo si vuelve a bajar:   - desde: "2026-12-01"
+#                                  tipo: 0.10
+iva:
+  - desde: "2026-07-01"
+    tipo: 0.21
+
+# Con qué serie del índice AVEBIOM se compara cada formato
+avebiom:
+  comparar:
+    saco: saco_eur_t          # saco 15 kg pasado a €/t
+    palet: palet_eur_t
+    bigbag: granel_volquete_eur_t
+    granel: granel_medio_eur_t  # media volquete + cisterna
+  # Página donde AVEBIOM publica sus índices (para avisar de uno nuevo)
+  pagina_indices: https://avebiom.org/en/actividades/indice-de-precios-biocombustibles-solidos/
+  # Precio EXW (€/t) del 1T2019 = base 100 % del índice de fábrica.
+  # Calculado de: marzo 2023 = 309,6 €/t = 176,6 %  ->  175,3 €/t
+  exw_base_eur_t: 175.31
+
+# Límites de cordura: fuera de este rango el precio se marca "anómalo"
+# (normalmente kg mal configurados o un precio mal leído)
+cordura_eur_t:
+  min: 120
+  max: 1500
+
+panel:
+  titulo: Monitor de precios del pellet · España

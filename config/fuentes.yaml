@@ -1,0 +1,478 @@
+# =====================================================================
+#  PUNTOS DE VENTA VIGILADOS
+# ---------------------------------------------------------------------
+#  Cada entrada es una página de producto con precio público.
+#
+#  tipo:        destino = precio a consumidor (tienda / distribuidor)
+#               origen  = venta directa de fábrica (proxy del precio en origen)
+#  formato:     saco | palet | bigbag | granel
+#  kg:          kilos que cubre el precio mostrado (saco 15, palet 70 sacos = 1050...)
+#  iva_incluido: si el precio de la web lleva IVA (si la web lo declara en sus
+#               datos estructurados, se usa lo que diga la web)
+#  transporte:  incluido | aparte | recogida | desconocido
+#  metodo:      auto (recomendado) | css | regex
+#               auto prueba: datos estructurados JSON-LD, microdatos, metaetiquetas,
+#               API de Shopify y, en último lugar, el texto de la página.
+#  selector:    (opcional) selector CSS del precio si auto falla
+#  regex:       (opcional) expresión regular con un grupo que capture el precio
+#  playwright:  true para webs que solo muestran el precio con JavaScript
+#  verificar:   true = revisar a mano la primera vez (formato o kg dudosos)
+#
+#  Para AÑADIR un punto: copia un bloque, cambia id, url y datos. Para
+#  QUITARLO sin borrarlo: activo: false
+# =====================================================================
+
+fuentes:
+
+  # ---------------- Grandes superficies y bricolaje (destino) ----------------
+  - id: lm-iberpellet-saco
+    nombre: Saco IBERPELLET 15 kg
+    tienda: Leroy Merlin
+    url: https://www.leroymerlin.es/productos/saco-de-pellet-15-kg-iberpellet-83681666.html
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: lm-naturpellet-saco
+    nombre: Saco NATURPELLET 15 kg
+    tienda: Leroy Merlin
+    url: https://www.leroymerlin.es/productos/saco-de-pellet-naturpellet-15-kg-17868151.html
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: lm-bioforestal-saco
+    nombre: Saco BIOFORESTAL 15 kg
+    tienda: Leroy Merlin
+    url: https://www.leroymerlin.es/productos/saco-de-pellets-bioforestal-de-15-kg-17891972.html
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: lm-europellet-saco
+    nombre: Saco EUROPELLET 15 kg
+    tienda: Leroy Merlin
+    url: https://www.leroymerlin.es/productos/saco-de-pellet-europellet-de-15-kg-82675635.html
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: lm-kingfoc-saco
+    nombre: Saco KINGFOC 15 kg (sin certificar)
+    tienda: Leroy Merlin
+    url: https://www.leroymerlin.es/productos/saco-de-pellets-kingfoc-de-15-kg-17919650.html
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: Sin certificar
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: lm-naturpellet-palet70
+    nombre: Palet 70 sacos NATURPELLET
+    tienda: Leroy Merlin
+    url: https://www.leroymerlin.es/productos/palet-de-70-sacos-de-pellet-naturpellet-19162094.html
+    tipo: destino
+    formato: palet
+    kg: 1050
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: desconocido
+    verificar: true
+
+  - id: bd-huellaverde-saco
+    nombre: Saco A1+ Huella Verde 15 kg
+    tienda: Brico Depôt
+    url: https://www.bricodepot.es/saco-pellet-a1-huella-verde-15-kg-8437024709008
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: bd-gme-saco
+    nombre: Saco GME 15 kg
+    tienda: Brico Depôt
+    url: https://www.bricodepot.es/saco-de-pellet-15kg-gme-8437026615017
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: bd-arapellet-saco
+    nombre: Saco A1+ Arapellet 15 kg
+    tienda: Brico Depôt
+    url: https://www.bricodepot.es/saco-pellet-a1-arapellet-15-kg-8437013019019
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: bd-fireplus-saco
+    nombre: Saco A1+ Fireplus 15 kg
+    tienda: Brico Depôt
+    url: https://www.bricodepot.es/saco-pellet-a1-fireplus-15-kg-8436572636729
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: bd-coterram-saco
+    nombre: Saco A1+ Coterram 15 kg
+    tienda: Brico Depôt
+    url: https://www.bricodepot.es/saco-pellet-a1-coterram-15-kg-8425402028797
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: bauhaus-ecoloma-saco
+    nombre: Pellets Ecoloma 15 kg
+    tienda: Bauhaus
+    url: https://www.bauhaus.es/pellets-de-madera/pellets-de-madera-ecoloma/p/24057158
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: obramat-2p-saco
+    nombre: Pellet 2P 15 kg
+    tienda: Obramat
+    url: https://www.obramat.es/productos/pellet-2p-15-kg-10810226.html
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: PEFC
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: obramat-asturias-saco
+    nombre: Pellet Asturias 15 kg
+    tienda: Obramat
+    url: https://www.obramat.es/productos/pellet-asturias-15kg-10746855.html
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: PEFC
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: bricoking-saco
+    nombre: Saco pellet 15 kg ENplus A1
+    tienda: Bricoking
+    url: https://www.bricoking.es/electricidad/calefaccion/calefaccion-pellets/saco-pellet-15kg-enplus-a1
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: recogida
+
+  - id: alcampo-huellaverde-saco
+    nombre: Saco Huella Verde 15 kg
+    tienda: Alcampo
+    url: https://www.compraonline.alcampo.es/products/saco-de-pellets-en-plus-a1-de-madera-100-natural-saco-de-15kg-huella-verde/723077
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: incluido
+    playwright: true
+
+  - id: alcampo-kokido-saco
+    nombre: Saco Kokido 15 kg
+    tienda: Alcampo
+    url: https://www.alcampo.es/compra-online/hogar/bricolaje-e-iluminacion/estufas/combustible-para-estufas/pellets/kokido-din-plus-saco-de-pellets-de-15-kilos/p/902518
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: incluido
+    playwright: true
+    verificar: true
+
+  - id: eci-eider-saco
+    nombre: Saco Pellets 15 kg EN Plus A-1 (Eider)
+    tienda: El Corte Inglés (Bricor)
+    url: https://www.elcorteingles.es/bricor/A36688789-saco-pellets-15-kg-en-plus-a-1/
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: desconocido
+
+  - id: carrefour-palet77
+    nombre: Palet 77 sacos Carrefour
+    tienda: Carrefour
+    url: https://www.carrefour.es/pallet-77-sacos-de-pellet-carrefour-15-kg/VC4A-31800050/p
+    tipo: destino
+    formato: palet
+    kg: 1155
+    certificacion: ENplus A1
+    region: Nacional
+    canal: gran_superficie
+    transporte: incluido
+    playwright: true
+
+  - id: amazon-burpellet-saco
+    nombre: Saco Burpellet 15 kg
+    tienda: Amazon
+    url: https://www.amazon.es/Burpellet-Saco-Pellets-15-kg/dp/B00QFNXUIK
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: marketplace
+    transporte: incluido
+    selector: "#corePrice_feature_div .a-offscreen"
+    notas: Amazon suele bloquear a los robots; si falla siempre, ponlo en activo false.
+
+  # ---------------- Distribuidores especializados (destino) ----------------
+  - id: tiendabiomasa-saco
+    nombre: Saco Leñas Oliver ENplus A1 15 kg
+    tienda: Tienda Biomasa
+    url: https://tiendabiomasa.com/saco-pellets-enplusa1-tb.html
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Comunidad Valenciana
+    canal: distribuidor
+    transporte: aparte
+
+  - id: mansele-palet77
+    nombre: Palet 77 sacos Mansele
+    tienda: Mansele
+    url: https://mansele.es/
+    tipo: destino
+    formato: palet
+    kg: 1155
+    certificacion: ENplus A1
+    region: Extremadura
+    canal: distribuidor
+    transporte: aparte
+
+  - id: chimeneando-palet70
+    nombre: Palet 70 sacos ENplus A1
+    tienda: Chimeneando
+    url: https://www.chimeneando.com/biomasa/329-pellets-calidad-a1-palets-con-sacos-pellet-15kg.html
+    tipo: destino
+    formato: palet
+    kg: 1050
+    certificacion: ENplus A1
+    region: Nacional
+    canal: distribuidor
+    transporte: incluido
+
+  - id: manacalor-pelletspor-saco
+    nombre: Saco Pelletspor 15 kg
+    tienda: Manacalor
+    url: https://manacalor.es/pellets/saco-de-pellets/saco-pellet-pelletspor-15-kg/
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: distribuidor
+    transporte: aparte
+
+  - id: manacalor-palet65
+    nombre: Palet 65 sacos Pelletspor
+    tienda: Manacalor
+    url: https://manacalor.es/pellets/saco-de-pellets/palet-de-pellets-galpellet-77-uds-530-saco-iva-incluido/
+    tipo: destino
+    formato: palet
+    kg: 975
+    certificacion: ENplus A1
+    region: Nacional
+    canal: distribuidor
+    transporte: aparte
+    verificar: true
+
+  - id: mipelletymas-burpellet72
+    nombre: Palet 72 sacos Burpellet
+    tienda: Mi Pellet y Más
+    url: https://mipelletymas.com/producto/burpellet-72-sacos/
+    tipo: destino
+    formato: palet
+    kg: 1080
+    certificacion: ENplus A1
+    region: Nacional
+    canal: distribuidor
+    transporte: desconocido
+
+  - id: caexven-saco
+    nombre: Saco EN-Plus A1 15 kg
+    tienda: Caexven
+    url: https://caexven.com/products/saco-de-pellets-con-certificacion-en-plus-a1-15-kg
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Región de Murcia
+    canal: distribuidor
+    transporte: aparte
+
+  - id: autosolar-saco
+    nombre: Saco Pellets A1 15 kg
+    tienda: AutoSolar
+    url: https://autosolar.es/pellets/saco-de-pellets-a1-15-kg-para-estufa
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Nacional
+    canal: distribuidor
+    transporte: aparte
+
+  - id: autosolar-palet77
+    nombre: Palet 77 sacos (1155 kg)
+    tienda: AutoSolar
+    url: https://autosolar.es/pellets/pallet-de-pellets-enplus-a1-1155-kg-para-estufa
+    tipo: destino
+    formato: palet
+    kg: 1155
+    certificacion: ENplus A1
+    region: Nacional
+    canal: distribuidor
+    transporte: desconocido
+    verificar: true
+
+  - id: agrotiendas-asturias72
+    nombre: Palet 72 sacos Pellets Asturias
+    tienda: Agrotiendas
+    url: https://www.agrotiendas.es/inicio/1256-pellets-asturias-palet-72-sacos-41050-12020-de-porte.html
+    tipo: destino
+    formato: palet
+    kg: 1080
+    certificacion: ENplus A1
+    region: Nacional
+    canal: distribuidor
+    transporte: incluido
+
+  - id: ecomind-palet70
+    nombre: Palet 70 sacos (portes incluidos)
+    tienda: Ecomind Pellets
+    url: https://ecomindpellets.com/tienda-pellets/
+    tipo: destino
+    formato: palet
+    kg: 1050
+    certificacion: ENplus A1
+    region: Galicia
+    canal: distribuidor
+    transporte: incluido
+    regex: 'PALET 70 SACOS.*?(\d{3}[.,]\d{2})\s*€'
+    verificar: true
+
+  - id: estufaire-granel
+    nombre: Pellet a granel (por tonelada)
+    tienda: Estufaire / SBI
+    url: https://estufaire.cat/es/biomasa/122-pellet-a-granel.html
+    tipo: destino
+    formato: granel
+    kg: 1000
+    iva_incluido: false
+    certificacion: ENplus A1
+    region: Cataluña
+    canal: distribuidor
+    transporte: incluido
+    verificar: true
+
+  - id: carbonverde-saco
+    nombre: Saco 15 kg
+    tienda: Carbón Verde
+    url: https://carbonverde.es/pellets-a-domicilio/
+    tipo: destino
+    formato: saco
+    kg: 15
+    certificacion: ENplus A1
+    region: Castilla y León
+    canal: distribuidor
+    transporte: aparte
+    regex: 'Saco de pellets de 15 kg\W*:?\s*(\d+[.,]?\d*)\s*euros'
+
+  # ---------------- Venta directa de fábrica (proxy de ORIGEN) ----------------
+  - id: naturbero-bigbag
+    nombre: Big Bag 1000 kg (fábrica)
+    tienda: Naturbero
+    url: https://www.naturbero.com/producto/big-bag-de-pellet-1000-kgs
+    tipo: origen
+    formato: bigbag
+    kg: 1000
+    certificacion: DINplus
+    region: País Vasco
+    canal: fabricante
+    transporte: incluido
+
+  - id: bioforestal-palet70
+    nombre: Palet 70 sacos (fábrica)
+    tienda: Bioforestal
+    url: https://bioforestal.es/comprar-pellets-baratos-galicia/
+    tipo: origen
+    formato: palet
+    kg: 1050
+    certificacion: ENplus A1
+    region: Galicia
+    canal: fabricante
+    transporte: incluido
+    regex: 'Palet de Pellets 70 sacos de 15Kg\W*(\d{3}[.,]\d{2})\s*€'
+    verificar: true
+
+  - id: vagalume-granel
+    nombre: Granel en camión (por media tonelada)
+    tienda: Vagalume Enerxía
+    url: https://www.vagalume-energia.es/products/pellet-a-granel-en-camion-por-medias-toneladas-minimo-2-tm
+    tipo: origen
+    formato: granel
+    kg: 500
+    certificacion: ENplus A1
+    region: Galicia
+    canal: fabricante
+    transporte: incluido
+    verificar: true
+    notas: Comprueba si el precio es por tonelada o por media tonelada y ajusta kg.
