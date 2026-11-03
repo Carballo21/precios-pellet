@@ -1,0 +1,107 @@
+{
+ "fallos": {
+  "lm-iberpellet-saco": 1,
+  "lm-naturpellet-saco": 1,
+  "lm-bioforestal-saco": 1,
+  "lm-europellet-saco": 1,
+  "lm-kingfoc-saco": 1,
+  "lm-naturpellet-palet70": 1,
+  "bd-huellaverde-saco": 0,
+  "bd-gme-saco": 0,
+  "bd-arapellet-saco": 0,
+  "bd-fireplus-saco": 0,
+  "bd-coterram-saco": 0,
+  "bauhaus-ecoloma-saco": 1,
+  "obramat-2p-saco": 1,
+  "obramat-asturias-saco": 1,
+  "bricoking-saco": 0,
+  "alcampo-huellaverde-saco": 0,
+  "alcampo-kokido-saco": 0,
+  "eci-eider-saco": 1,
+  "carrefour-palet77": 1,
+  "amazon-burpellet-saco": 0,
+  "tiendabiomasa-saco": 0,
+  "mansele-palet77": 0,
+  "chimeneando-palet70": 0,
+  "manacalor-pelletspor-saco": 0,
+  "manacalor-palet65": 0,
+  "mipelletymas-burpellet72": 0,
+  "caexven-saco": 0,
+  "autosolar-saco": 0,
+  "autosolar-palet77": 0,
+  "agrotiendas-asturias72": 0,
+  "ecomind-palet70": 0,
+  "estufaire-granel": 0,
+  "carbonverde-saco": 0,
+  "naturbero-bigbag": 1,
+  "bioforestal-palet70": 0,
+  "vagalume-granel": 0
+ },
+ "avebiom_pdfs": [
+  "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf",
+  "https://avebiom.org/wp-content/uploads/2026/10/IPB-indice-precios-ASTILLA-3T2026.pdf",
+  "https://avebiom.org/wp-content/uploads/2026/10/IPB-indice-precios-HUESO-3T2026.pdf",
+  "https://avebiom.org/wp-content/uploads/2026/10/IPB-indice-precios-PELLET-3T2026.pdf"
+ ],
+ "alertas_enviadas": {
+  "da:saco:3T2026:+": "2026-11-03T08:06:41",
+  "da:palet:3T2026:+": "2026-11-03T08:06:41",
+  "da:granel:3T2026:-": "2026-11-03T08:06:41",
+  "po:chimeneando-palet70:368.0": "2026-11-03T08:06:41",
+  "po:estufaire-granel:230.0": "2026-11-03T08:06:41",
+  "po:carbonverde-saco:5.0": "2026-11-03T08:06:41",
+  "ss:6": "2026-11-03T08:06:41"
+ },
+ "historial_alertas": [
+  {
+   "fecha": "2026-11-03T08:06:41",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado saco 15 kg +32.9 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 524.61 €/t vs índice 394.67 €/t"
+  },
+  {
+   "fecha": "2026-11-03T08:06:41",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado palet +19.9 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 468.7 €/t vs índice 390.75 €/t"
+  },
+  {
+   "fecha": "2026-11-03T08:06:41",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado granel -26.0 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 278.3 €/t vs índice 376.23 €/t"
+  },
+  {
+   "fecha": "2026-11-03T08:06:41",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Chimeneando · Palet 70 sacos ENplus A1 a 350.48 €/t",
+   "detalle": "https://www.chimeneando.com/biomasa/329-pellets-calidad-a1-palets-con-sacos-pellet-15kg.html"
+  },
+  {
+   "fecha": "2026-11-03T08:06:41",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Estufaire / SBI · Pellet a granel (por tonelada) a 278.3 €/t",
+   "detalle": "https://estufaire.cat/es/biomasa/122-pellet-a-granel.html"
+  },
+  {
+   "fecha": "2026-11-03T08:06:41",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Carbón Verde · Saco 15 kg a 5.00 €/saco",
+   "detalle": "https://carbonverde.es/pellets-a-domicilio/"
+  },
+  {
+   "fecha": "2026-11-03T08:06:41",
+   "nivel": "aviso",
+   "regla": "sin_stock",
+   "titulo": "6 puntos de venta sin existencias",
+   "detalle": "Alcampo, Brico Depôt, Vagalume Enerxía"
+  }
+ ],
+ "ultima_ronda": "2026-11-03T08:06:41"
+}
