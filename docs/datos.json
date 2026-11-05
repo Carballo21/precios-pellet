@@ -1,7 +1,7 @@
 {
  "titulo": "Monitor de precios del pellet · España",
- "ultima_ronda": "2026-11-03T08:06:41",
- "num_rondas": 1,
+ "ultima_ronda": "2026-11-05T14:37:17",
+ "num_rondas": 2,
  "ipb_vigente": {
   "trimestre": "3T2026",
   "inicio": "2026-07-01",
@@ -23,25 +23,25 @@
  },
  "kpis": {
   "saco": {
-   "valor": 524.61,
-   "n": 13,
+   "valor": 579.58,
+   "n": 8,
    "ref": 394.67,
-   "dev_pct": 32.9,
-   "var_pct": null
+   "dev_pct": 46.9,
+   "var_pct": 10.5
   },
   "palet": {
    "valor": 468.7,
    "n": 6,
    "ref": 390.75,
    "dev_pct": 19.9,
-   "var_pct": null
+   "var_pct": 0.0
   },
   "granel": {
    "valor": 278.3,
    "n": 1,
    "ref": 376.23,
    "dev_pct": -26.0,
-   "var_pct": null
+   "var_pct": 0.0
   },
   "exw": {
    "mes": "2026-09",
@@ -50,9 +50,9 @@
    "prevision": false,
    "fuente": "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf"
   },
-  "destino_sin_iva": 409.52,
-  "margen": 157.95,
-  "leidos": 22,
+  "destino_sin_iva": 425.74,
+  "margen": 174.17,
+  "leidos": 17,
   "total": 36
  },
  "mercado": {
@@ -62,6 +62,12 @@
     "y": 524.61,
     "n": 13,
     "ronda": "2026-11-03T08:06:41"
+   },
+   {
+    "x": "2026-11-05",
+    "y": 579.58,
+    "n": 8,
+    "ronda": "2026-11-05T14:37:17"
    }
   ],
   "palet": [
@@ -70,6 +76,12 @@
     "y": 468.7,
     "n": 6,
     "ronda": "2026-11-03T08:06:41"
+   },
+   {
+    "x": "2026-11-05",
+    "y": 468.7,
+    "n": 6,
+    "ronda": "2026-11-05T14:37:17"
    }
   ],
   "granel": [
@@ -78,6 +90,12 @@
     "y": 278.3,
     "n": 1,
     "ronda": "2026-11-03T08:06:41"
+   },
+   {
+    "x": "2026-11-05",
+    "y": 278.3,
+    "n": 1,
+    "ronda": "2026-11-05T14:37:17"
    }
   ],
   "origen": [
@@ -86,6 +104,12 @@
     "y": 383.31,
     "n": 2,
     "ronda": "2026-11-03T08:06:41"
+   },
+   {
+    "x": "2026-11-05",
+    "y": 383.31,
+    "n": 2,
+    "ronda": "2026-11-05T14:37:17"
    }
   ]
  },
@@ -467,20 +491,20 @@
    "certificacion": "ENplus A1",
    "transporte": "recogida",
    "url": "https://www.bricodepot.es/saco-pellet-a1-huella-verde-15-kg-8437024709008",
-   "estado": "ok",
-   "error": "",
-   "disponible": "si",
+   "estado": "error",
+   "error": "HTTP 403",
+   "disponible": "",
    "sospechoso": "no",
-   "metodo": "json-ld",
-   "iva_incluido": "si",
-   "precio": 5.95,
+   "metodo": "",
+   "iva_incluido": "",
+   "precio": null,
    "kg": 15.0,
-   "eur_t": 396.67,
-   "eur_t_sin": 327.82,
-   "eur_saco": 5.95,
+   "eur_t": null,
+   "eur_t_sin": null,
+   "eur_saco": null,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": 0.5
+   "dev_pct": null
   },
   {
    "fuente_id": "bd-gme-saco",
@@ -493,20 +517,20 @@
    "certificacion": "ENplus A1",
    "transporte": "recogida",
    "url": "https://www.bricodepot.es/saco-de-pellet-15kg-gme-8437026615017",
-   "estado": "ok",
-   "error": "",
-   "disponible": "si",
+   "estado": "error",
+   "error": "HTTP 403",
+   "disponible": "",
    "sospechoso": "no",
-   "metodo": "json-ld",
-   "iva_incluido": "si",
-   "precio": 5.95,
+   "metodo": "",
+   "iva_incluido": "",
+   "precio": null,
    "kg": 15.0,
-   "eur_t": 396.67,
-   "eur_t_sin": 327.82,
-   "eur_saco": 5.95,
+   "eur_t": null,
+   "eur_t_sin": null,
+   "eur_saco": null,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": 0.5
+   "dev_pct": null
   },
   {
    "fuente_id": "bd-arapellet-saco",
@@ -519,20 +543,20 @@
    "certificacion": "ENplus A1",
    "transporte": "recogida",
    "url": "https://www.bricodepot.es/saco-pellet-a1-arapellet-15-kg-8437013019019",
-   "estado": "ok",
-   "error": "",
-   "disponible": "no",
+   "estado": "error",
+   "error": "HTTP 403",
+   "disponible": "",
    "sospechoso": "no",
-   "metodo": "json-ld",
-   "iva_incluido": "si",
-   "precio": 6.95,
+   "metodo": "",
+   "iva_incluido": "",
+   "precio": null,
    "kg": 15.0,
-   "eur_t": 463.33,
-   "eur_t_sin": 382.92,
-   "eur_saco": 6.95,
+   "eur_t": null,
+   "eur_t_sin": null,
+   "eur_saco": null,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": 17.4
+   "dev_pct": null
   },
   {
    "fuente_id": "bd-fireplus-saco",
@@ -545,20 +569,20 @@
    "certificacion": "ENplus A1",
    "transporte": "recogida",
    "url": "https://www.bricodepot.es/saco-pellet-a1-fireplus-15-kg-8436572636729",
-   "estado": "ok",
-   "error": "",
-   "disponible": "no",
+   "estado": "error",
+   "error": "HTTP 403",
+   "disponible": "",
    "sospechoso": "no",
-   "metodo": "json-ld",
-   "iva_incluido": "si",
-   "precio": 6.95,
+   "metodo": "",
+   "iva_incluido": "",
+   "precio": null,
    "kg": 15.0,
-   "eur_t": 463.33,
-   "eur_t_sin": 382.92,
-   "eur_saco": 6.95,
+   "eur_t": null,
+   "eur_t_sin": null,
+   "eur_saco": null,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": 17.4
+   "dev_pct": null
   },
   {
    "fuente_id": "bd-coterram-saco",
@@ -571,20 +595,20 @@
    "certificacion": "ENplus A1",
    "transporte": "recogida",
    "url": "https://www.bricodepot.es/saco-pellet-a1-coterram-15-kg-8425402028797",
-   "estado": "ok",
-   "error": "",
-   "disponible": "no",
+   "estado": "error",
+   "error": "HTTP 403",
+   "disponible": "",
    "sospechoso": "no",
-   "metodo": "json-ld",
-   "iva_incluido": "si",
-   "precio": 6.95,
+   "metodo": "",
+   "iva_incluido": "",
+   "precio": null,
    "kg": 15.0,
-   "eur_t": 463.33,
-   "eur_t_sin": 382.92,
-   "eur_saco": 6.95,
+   "eur_t": null,
+   "eur_t_sin": null,
+   "eur_saco": null,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": 17.4
+   "dev_pct": null
   },
   {
    "fuente_id": "bauhaus-ecoloma-saco",
@@ -686,7 +710,7 @@
    "eur_t": 399.33,
    "eur_t_sin": 330.03,
    "eur_saco": 5.99,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": 1.2
   },
@@ -712,7 +736,7 @@
    "eur_t": 443.33,
    "eur_t_sin": 366.39,
    "eur_saco": 6.65,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": 12.3
   },
@@ -738,7 +762,7 @@
    "eur_t": 416.0,
    "eur_t_sin": 343.8,
    "eur_saco": 6.24,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": 5.4
   },
@@ -816,7 +840,7 @@
    "eur_t": 1396.67,
    "eur_t_sin": 1154.27,
    "eur_saco": 20.95,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": 253.9
   },
@@ -842,7 +866,7 @@
    "eur_t": 532.0,
    "eur_t_sin": 439.67,
    "eur_saco": 7.98,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": 34.8
   },
@@ -894,7 +918,7 @@
    "eur_t": 350.48,
    "eur_t_sin": 289.65,
    "eur_saco": 5.257,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 390.75,
    "dev_pct": -10.3
   },
@@ -920,7 +944,7 @@
    "eur_t": 393.33,
    "eur_t_sin": 325.07,
    "eur_saco": 5.9,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": -0.3
   },
@@ -946,7 +970,7 @@
    "eur_t": 418.46,
    "eur_t_sin": 345.84,
    "eur_saco": 6.277,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 390.75,
    "dev_pct": 7.1
   },
@@ -972,7 +996,7 @@
    "eur_t": 386.81,
    "eur_t_sin": 319.67,
    "eur_saco": 5.802,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 390.75,
    "dev_pct": -1.0
   },
@@ -1024,7 +1048,7 @@
    "eur_t": 722.67,
    "eur_t_sin": 597.25,
    "eur_saco": 10.84,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": 83.1
   },
@@ -1050,7 +1074,7 @@
    "eur_t": 722.77,
    "eur_t_sin": 597.33,
    "eur_saco": 10.842,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 390.75,
    "dev_pct": 85.0
   },
@@ -1076,7 +1100,7 @@
    "eur_t": 495.56,
    "eur_t_sin": 409.55,
    "eur_saco": 7.433,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 390.75,
    "dev_pct": 26.8
   },
@@ -1102,7 +1126,7 @@
    "eur_t": 438.1,
    "eur_t_sin": 362.06,
    "eur_saco": 6.571,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 390.75,
    "dev_pct": 12.1
   },
@@ -1128,7 +1152,7 @@
    "eur_t": 278.3,
    "eur_t_sin": 230.0,
    "eur_saco": 4.175,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 376.23,
    "dev_pct": -26.0
   },
@@ -1154,7 +1178,7 @@
    "eur_t": 333.33,
    "eur_t_sin": 275.48,
    "eur_saco": 5.0,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": -15.5
   },
@@ -1206,7 +1230,7 @@
    "eur_t": 427.62,
    "eur_t_sin": 353.4,
    "eur_saco": 6.414,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 251.57,
    "dev_pct": 40.5
   },
@@ -1232,12 +1256,117 @@
    "eur_t": 500.0,
    "eur_t_sin": 413.22,
    "eur_saco": 7.5,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 251.57,
    "dev_pct": 64.3
   }
  ],
  "alertas": [
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "importante",
+   "regla": "nuevo_indice_avebiom",
+   "titulo": "AVEBIOM ha publicado un índice nuevo",
+   "detalle": "https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf\n   Añade sus valores a data/avebiom_ipb.csv o avebiom_exw.csv"
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Naturbero · Big Bag 1000 kg (fábrica)» falla 2 veces seguidas",
+   "detalle": "Último error: robots.txt no permite leer esta página. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Carrefour · Palet 77 sacos Carrefour» falla 2 veces seguidas",
+   "detalle": "Último error: no se encontró ningún precio en la página. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «El Corte Inglés (Bricor) · Saco Pellets 15 kg EN Plus A-1 (Eider)» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Obramat · Pellet Asturias 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Obramat · Pellet 2P 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Bauhaus · Pellets Ecoloma 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Palet 70 sacos NATURPELLET» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco KINGFOC 15 kg (sin certificar)» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco EUROPELLET 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco BIOFORESTAL 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco NATURPELLET 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco IBERPELLET 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "margen_origen_destino",
+   "titulo": "Diferencial destino − origen: 174 €/t",
+   "detalle": "Media destino sin IVA 425.74 €/t · EXW AVEBIOM 2026-09 ≈ 251.57 €/t"
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) sube 10.5 %",
+   "detalle": "524.61 → 579.58 €/t con IVA (8 puntos)"
+  },
   {
    "fecha": "2026-11-03T08:06:41",
    "nivel": "aviso",
@@ -1338,6 +1467,23 @@
  ],
  "medias": {
   "saco": {
+   "media_con_iva": 579.58,
+   "media_sin_iva": 479.0,
+   "n": 8
+  },
+  "palet": {
+   "media_con_iva": 468.7,
+   "media_sin_iva": 387.35,
+   "n": 6
+  },
+  "granel": {
+   "media_con_iva": 278.3,
+   "media_sin_iva": 230.0,
+   "n": 1
+  }
+ },
+ "medias_ant": {
+  "saco": {
    "media_con_iva": 524.61,
    "media_sin_iva": 433.57,
    "n": 13
@@ -1352,6 +1498,5 @@
    "media_sin_iva": 230.0,
    "n": 1
   }
- },
- "medias_ant": {}
+ }
 }

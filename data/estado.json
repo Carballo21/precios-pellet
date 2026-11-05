@@ -1,24 +1,24 @@
 {
  "fallos": {
-  "lm-iberpellet-saco": 1,
-  "lm-naturpellet-saco": 1,
-  "lm-bioforestal-saco": 1,
-  "lm-europellet-saco": 1,
-  "lm-kingfoc-saco": 1,
-  "lm-naturpellet-palet70": 1,
-  "bd-huellaverde-saco": 0,
-  "bd-gme-saco": 0,
-  "bd-arapellet-saco": 0,
-  "bd-fireplus-saco": 0,
-  "bd-coterram-saco": 0,
-  "bauhaus-ecoloma-saco": 1,
-  "obramat-2p-saco": 1,
-  "obramat-asturias-saco": 1,
+  "lm-iberpellet-saco": 2,
+  "lm-naturpellet-saco": 2,
+  "lm-bioforestal-saco": 2,
+  "lm-europellet-saco": 2,
+  "lm-kingfoc-saco": 2,
+  "lm-naturpellet-palet70": 2,
+  "bd-huellaverde-saco": 1,
+  "bd-gme-saco": 1,
+  "bd-arapellet-saco": 1,
+  "bd-fireplus-saco": 1,
+  "bd-coterram-saco": 1,
+  "bauhaus-ecoloma-saco": 2,
+  "obramat-2p-saco": 2,
+  "obramat-asturias-saco": 2,
   "bricoking-saco": 0,
   "alcampo-huellaverde-saco": 0,
   "alcampo-kokido-saco": 0,
-  "eci-eider-saco": 1,
-  "carrefour-palet77": 1,
+  "eci-eider-saco": 2,
+  "carrefour-palet77": 2,
   "amazon-burpellet-saco": 0,
   "tiendabiomasa-saco": 0,
   "mansele-palet77": 0,
@@ -33,7 +33,7 @@
   "ecomind-palet70": 0,
   "estufaire-granel": 0,
   "carbonverde-saco": 0,
-  "naturbero-bigbag": 1,
+  "naturbero-bigbag": 2,
   "bioforestal-palet70": 0,
   "vagalume-granel": 0
  },
@@ -41,7 +41,8 @@
   "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf",
   "https://avebiom.org/wp-content/uploads/2026/10/IPB-indice-precios-ASTILLA-3T2026.pdf",
   "https://avebiom.org/wp-content/uploads/2026/10/IPB-indice-precios-HUESO-3T2026.pdf",
-  "https://avebiom.org/wp-content/uploads/2026/10/IPB-indice-precios-PELLET-3T2026.pdf"
+  "https://avebiom.org/wp-content/uploads/2026/10/IPB-indice-precios-PELLET-3T2026.pdf",
+  "https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf"
  ],
  "alertas_enviadas": {
   "da:saco:3T2026:+": "2026-11-03T08:06:41",
@@ -50,7 +51,22 @@
   "po:chimeneando-palet70:368.0": "2026-11-03T08:06:41",
   "po:estufaire-granel:230.0": "2026-11-03T08:06:41",
   "po:carbonverde-saco:5.0": "2026-11-03T08:06:41",
-  "ss:6": "2026-11-03T08:06:41"
+  "ss:6": "2026-11-03T08:06:41",
+  "vm:saco:+:579.58": "2026-11-05T14:37:17",
+  "mo:2026-09:174": "2026-11-05T14:37:17",
+  "fs:lm-iberpellet-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:lm-naturpellet-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:lm-bioforestal-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:lm-europellet-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:lm-kingfoc-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:lm-naturpellet-palet70:2026-11-05": "2026-11-05T14:37:17",
+  "fs:bauhaus-ecoloma-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:obramat-2p-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:obramat-asturias-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:eci-eider-saco:2026-11-05": "2026-11-05T14:37:17",
+  "fs:carrefour-palet77:2026-11-05": "2026-11-05T14:37:17",
+  "fs:naturbero-bigbag:2026-11-05": "2026-11-05T14:37:17",
+  "av:https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf": "2026-11-05T14:37:17"
  },
  "historial_alertas": [
   {
@@ -101,7 +117,112 @@
    "regla": "sin_stock",
    "titulo": "6 puntos de venta sin existencias",
    "detalle": "Alcampo, Brico Depôt, Vagalume Enerxía"
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) sube 10.5 %",
+   "detalle": "524.61 → 579.58 €/t con IVA (8 puntos)"
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "margen_origen_destino",
+   "titulo": "Diferencial destino − origen: 174 €/t",
+   "detalle": "Media destino sin IVA 425.74 €/t · EXW AVEBIOM 2026-09 ≈ 251.57 €/t"
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco IBERPELLET 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco NATURPELLET 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco BIOFORESTAL 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco EUROPELLET 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Saco KINGFOC 15 kg (sin certificar)» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Leroy Merlin · Palet 70 sacos NATURPELLET» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Bauhaus · Pellets Ecoloma 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Obramat · Pellet 2P 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Obramat · Pellet Asturias 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «El Corte Inglés (Bricor) · Saco Pellets 15 kg EN Plus A-1 (Eider)» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Carrefour · Palet 77 sacos Carrefour» falla 2 veces seguidas",
+   "detalle": "Último error: no se encontró ningún precio en la página. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Naturbero · Big Bag 1000 kg (fábrica)» falla 2 veces seguidas",
+   "detalle": "Último error: robots.txt no permite leer esta página. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-05T14:37:17",
+   "nivel": "importante",
+   "regla": "nuevo_indice_avebiom",
+   "titulo": "AVEBIOM ha publicado un índice nuevo",
+   "detalle": "https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf\n   Añade sus valores a data/avebiom_ipb.csv o avebiom_exw.csv"
   }
  ],
- "ultima_ronda": "2026-11-03T08:06:41"
+ "ultima_ronda": "2026-11-05T14:37:17"
 }
