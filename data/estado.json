@@ -1,25 +1,25 @@
 {
  "fallos": {
-  "lm-iberpellet-saco": 2,
-  "lm-naturpellet-saco": 2,
-  "lm-bioforestal-saco": 2,
-  "lm-europellet-saco": 2,
-  "lm-kingfoc-saco": 2,
-  "lm-naturpellet-palet70": 2,
-  "bd-huellaverde-saco": 1,
-  "bd-gme-saco": 1,
-  "bd-arapellet-saco": 1,
-  "bd-fireplus-saco": 1,
-  "bd-coterram-saco": 1,
-  "bauhaus-ecoloma-saco": 2,
-  "obramat-2p-saco": 2,
-  "obramat-asturias-saco": 2,
+  "lm-iberpellet-saco": 3,
+  "lm-naturpellet-saco": 3,
+  "lm-bioforestal-saco": 3,
+  "lm-europellet-saco": 3,
+  "lm-kingfoc-saco": 3,
+  "lm-naturpellet-palet70": 3,
+  "bd-huellaverde-saco": 2,
+  "bd-gme-saco": 2,
+  "bd-arapellet-saco": 2,
+  "bd-fireplus-saco": 2,
+  "bd-coterram-saco": 2,
+  "bauhaus-ecoloma-saco": 3,
+  "obramat-2p-saco": 3,
+  "obramat-asturias-saco": 3,
   "bricoking-saco": 0,
   "alcampo-huellaverde-saco": 0,
   "alcampo-kokido-saco": 0,
-  "eci-eider-saco": 2,
-  "carrefour-palet77": 2,
-  "amazon-burpellet-saco": 0,
+  "eci-eider-saco": 3,
+  "carrefour-palet77": 3,
+  "amazon-burpellet-saco": 1,
   "tiendabiomasa-saco": 0,
   "mansele-palet77": 0,
   "chimeneando-palet70": 0,
@@ -33,7 +33,7 @@
   "ecomind-palet70": 0,
   "estufaire-granel": 0,
   "carbonverde-saco": 0,
-  "naturbero-bigbag": 2,
+  "naturbero-bigbag": 3,
   "bioforestal-palet70": 0,
   "vagalume-granel": 0
  },
@@ -45,12 +45,12 @@
   "https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf"
  ],
  "alertas_enviadas": {
-  "da:saco:3T2026:+": "2026-11-03T08:06:41",
-  "da:palet:3T2026:+": "2026-11-03T08:06:41",
-  "da:granel:3T2026:-": "2026-11-03T08:06:41",
-  "po:chimeneando-palet70:368.0": "2026-11-03T08:06:41",
-  "po:estufaire-granel:230.0": "2026-11-03T08:06:41",
-  "po:carbonverde-saco:5.0": "2026-11-03T08:06:41",
+  "da:saco:3T2026:+": "2026-11-07T12:57:17",
+  "da:palet:3T2026:+": "2026-11-07T12:57:17",
+  "da:granel:3T2026:-": "2026-11-07T12:57:17",
+  "po:chimeneando-palet70:368.0": "2026-11-07T12:57:17",
+  "po:estufaire-granel:230.0": "2026-11-07T12:57:17",
+  "po:carbonverde-saco:5.0": "2026-11-07T12:57:17",
   "ss:6": "2026-11-03T08:06:41",
   "vm:saco:+:579.58": "2026-11-05T14:37:17",
   "mo:2026-09:174": "2026-11-05T14:37:17",
@@ -66,7 +66,13 @@
   "fs:eci-eider-saco:2026-11-05": "2026-11-05T14:37:17",
   "fs:carrefour-palet77:2026-11-05": "2026-11-05T14:37:17",
   "fs:naturbero-bigbag:2026-11-05": "2026-11-05T14:37:17",
-  "av:https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf": "2026-11-05T14:37:17"
+  "av:https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf": "2026-11-05T14:37:17",
+  "vm:saco:-:462.86": "2026-11-07T12:57:17",
+  "fs:bd-huellaverde-saco:2026-11-07": "2026-11-07T12:57:17",
+  "fs:bd-gme-saco:2026-11-07": "2026-11-07T12:57:17",
+  "fs:bd-arapellet-saco:2026-11-07": "2026-11-07T12:57:17",
+  "fs:bd-fireplus-saco:2026-11-07": "2026-11-07T12:57:17",
+  "fs:bd-coterram-saco:2026-11-07": "2026-11-07T12:57:17"
  },
  "historial_alertas": [
   {
@@ -222,7 +228,91 @@
    "regla": "nuevo_indice_avebiom",
    "titulo": "AVEBIOM ha publicado un índice nuevo",
    "detalle": "https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf\n   Añade sus valores a data/avebiom_ipb.csv o avebiom_exw.csv"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) baja 20.1 %",
+   "detalle": "579.58 → 462.86 €/t con IVA (7 puntos)"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado saco 15 kg +17.3 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 462.86 €/t vs índice 394.67 €/t"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado palet +19.9 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 468.7 €/t vs índice 390.75 €/t"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado granel -26.0 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 278.3 €/t vs índice 376.23 €/t"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Chimeneando · Palet 70 sacos ENplus A1 a 350.48 €/t",
+   "detalle": "https://www.chimeneando.com/biomasa/329-pellets-calidad-a1-palets-con-sacos-pellet-15kg.html"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Estufaire / SBI · Pellet a granel (por tonelada) a 278.3 €/t",
+   "detalle": "https://estufaire.cat/es/biomasa/122-pellet-a-granel.html"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Carbón Verde · Saco 15 kg a 5.00 €/saco",
+   "detalle": "https://carbonverde.es/pellets-a-domicilio/"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Huella Verde 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco GME 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Arapellet 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Fireplus 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Coterram 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
   }
  ],
- "ultima_ronda": "2026-11-05T14:37:17"
+ "ultima_ronda": "2026-11-07T12:57:17"
 }

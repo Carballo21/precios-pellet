@@ -1,7 +1,7 @@
 {
  "titulo": "Monitor de precios del pellet · España",
- "ultima_ronda": "2026-11-05T14:37:17",
- "num_rondas": 2,
+ "ultima_ronda": "2026-11-07T12:57:17",
+ "num_rondas": 3,
  "ipb_vigente": {
   "trimestre": "3T2026",
   "inicio": "2026-07-01",
@@ -23,11 +23,11 @@
  },
  "kpis": {
   "saco": {
-   "valor": 579.58,
-   "n": 8,
+   "valor": 462.86,
+   "n": 7,
    "ref": 394.67,
-   "dev_pct": 46.9,
-   "var_pct": 10.5
+   "dev_pct": 17.3,
+   "var_pct": -20.1
   },
   "palet": {
    "valor": 468.7,
@@ -50,9 +50,9 @@
    "prevision": false,
    "fuente": "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf"
   },
-  "destino_sin_iva": 425.74,
-  "margen": 174.17,
-  "leidos": 17,
+  "destino_sin_iva": 373.7,
+  "margen": 122.13,
+  "leidos": 16,
   "total": 36
  },
  "mercado": {
@@ -68,6 +68,12 @@
     "y": 579.58,
     "n": 8,
     "ronda": "2026-11-05T14:37:17"
+   },
+   {
+    "x": "2026-11-07",
+    "y": 462.86,
+    "n": 7,
+    "ronda": "2026-11-07T12:57:17"
    }
   ],
   "palet": [
@@ -82,6 +88,12 @@
     "y": 468.7,
     "n": 6,
     "ronda": "2026-11-05T14:37:17"
+   },
+   {
+    "x": "2026-11-07",
+    "y": 468.7,
+    "n": 6,
+    "ronda": "2026-11-07T12:57:17"
    }
   ],
   "granel": [
@@ -96,6 +108,12 @@
     "y": 278.3,
     "n": 1,
     "ronda": "2026-11-05T14:37:17"
+   },
+   {
+    "x": "2026-11-07",
+    "y": 278.3,
+    "n": 1,
+    "ronda": "2026-11-07T12:57:17"
    }
   ],
   "origen": [
@@ -110,6 +128,12 @@
     "y": 383.31,
     "n": 2,
     "ronda": "2026-11-05T14:37:17"
+   },
+   {
+    "x": "2026-11-07",
+    "y": 383.31,
+    "n": 2,
+    "ronda": "2026-11-07T12:57:17"
    }
   ]
  },
@@ -829,20 +853,20 @@
    "certificacion": "ENplus A1",
    "transporte": "incluido",
    "url": "https://www.amazon.es/Burpellet-Saco-Pellets-15-kg/dp/B00QFNXUIK",
-   "estado": "ok",
-   "error": "",
+   "estado": "error",
+   "error": "HTTP 503",
    "disponible": "",
    "sospechoso": "no",
-   "metodo": "texto",
-   "iva_incluido": "si",
-   "precio": 20.95,
+   "metodo": "",
+   "iva_incluido": "",
+   "precio": null,
    "kg": 15.0,
-   "eur_t": 1396.67,
-   "eur_t_sin": 1154.27,
-   "eur_saco": 20.95,
-   "var_pct": 0.0,
+   "eur_t": null,
+   "eur_t_sin": null,
+   "eur_saco": null,
+   "var_pct": null,
    "ref": 394.67,
-   "dev_pct": 253.9
+   "dev_pct": null
   },
   {
    "fuente_id": "tiendabiomasa-saco",
@@ -1263,6 +1287,90 @@
  ],
  "alertas": [
   {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Coterram 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Fireplus 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Arapellet 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco GME 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Huella Verde 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Carbón Verde · Saco 15 kg a 5.00 €/saco",
+   "detalle": "https://carbonverde.es/pellets-a-domicilio/"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Estufaire / SBI · Pellet a granel (por tonelada) a 278.3 €/t",
+   "detalle": "https://estufaire.cat/es/biomasa/122-pellet-a-granel.html"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Chimeneando · Palet 70 sacos ENplus A1 a 350.48 €/t",
+   "detalle": "https://www.chimeneando.com/biomasa/329-pellets-calidad-a1-palets-con-sacos-pellet-15kg.html"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado granel -26.0 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 278.3 €/t vs índice 376.23 €/t"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado palet +19.9 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 468.7 €/t vs índice 390.75 €/t"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado saco 15 kg +17.3 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 462.86 €/t vs índice 394.67 €/t"
+  },
+  {
+   "fecha": "2026-11-07T12:57:17",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) baja 20.1 %",
+   "detalle": "579.58 → 462.86 €/t con IVA (7 puntos)"
+  },
+  {
    "fecha": "2026-11-05T14:37:17",
    "nivel": "importante",
    "regla": "nuevo_indice_avebiom",
@@ -1467,9 +1575,9 @@
  ],
  "medias": {
   "saco": {
-   "media_con_iva": 579.58,
-   "media_sin_iva": 479.0,
-   "n": 8
+   "media_con_iva": 462.86,
+   "media_sin_iva": 382.53,
+   "n": 7
   },
   "palet": {
    "media_con_iva": 468.7,
@@ -1484,9 +1592,9 @@
  },
  "medias_ant": {
   "saco": {
-   "media_con_iva": 524.61,
-   "media_sin_iva": 433.57,
-   "n": 13
+   "media_con_iva": 579.58,
+   "media_sin_iva": 479.0,
+   "n": 8
   },
   "palet": {
    "media_con_iva": 468.7,
