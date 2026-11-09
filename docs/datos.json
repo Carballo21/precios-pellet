@@ -1,7 +1,7 @@
 {
  "titulo": "Monitor de precios del pellet · España",
- "ultima_ronda": "2026-11-07T12:57:17",
- "num_rondas": 3,
+ "ultima_ronda": "2026-11-09T16:13:37",
+ "num_rondas": 4,
  "ipb_vigente": {
   "trimestre": "3T2026",
   "inicio": "2026-07-01",
@@ -23,18 +23,18 @@
  },
  "kpis": {
   "saco": {
-   "valor": 462.86,
-   "n": 7,
+   "valor": 462.91,
+   "n": 8,
    "ref": 394.67,
    "dev_pct": 17.3,
-   "var_pct": -20.1
+   "var_pct": 0.0
   },
   "palet": {
-   "valor": 468.7,
-   "n": 6,
+   "valor": 456.78,
+   "n": 7,
    "ref": 390.75,
-   "dev_pct": 19.9,
-   "var_pct": 0.0
+   "dev_pct": 16.9,
+   "var_pct": -2.5
   },
   "granel": {
    "valor": 278.3,
@@ -50,9 +50,9 @@
    "prevision": false,
    "fuente": "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf"
   },
-  "destino_sin_iva": 373.7,
-  "margen": 122.13,
-  "leidos": 16,
+  "destino_sin_iva": 370.82,
+  "margen": 119.25,
+  "leidos": 18,
   "total": 36
  },
  "mercado": {
@@ -74,6 +74,12 @@
     "y": 462.86,
     "n": 7,
     "ronda": "2026-11-07T12:57:17"
+   },
+   {
+    "x": "2026-11-09",
+    "y": 462.91,
+    "n": 8,
+    "ronda": "2026-11-09T16:13:37"
    }
   ],
   "palet": [
@@ -94,6 +100,12 @@
     "y": 468.7,
     "n": 6,
     "ronda": "2026-11-07T12:57:17"
+   },
+   {
+    "x": "2026-11-09",
+    "y": 456.78,
+    "n": 7,
+    "ronda": "2026-11-09T16:13:37"
    }
   ],
   "granel": [
@@ -114,6 +126,12 @@
     "y": 278.3,
     "n": 1,
     "ronda": "2026-11-07T12:57:17"
+   },
+   {
+    "x": "2026-11-09",
+    "y": 278.3,
+    "n": 1,
+    "ronda": "2026-11-09T16:13:37"
    }
   ],
   "origen": [
@@ -134,6 +152,12 @@
     "y": 383.31,
     "n": 2,
     "ronda": "2026-11-07T12:57:17"
+   },
+   {
+    "x": "2026-11-09",
+    "y": 383.31,
+    "n": 2,
+    "ronda": "2026-11-09T16:13:37"
    }
   ]
  },
@@ -567,20 +591,20 @@
    "certificacion": "ENplus A1",
    "transporte": "recogida",
    "url": "https://www.bricodepot.es/saco-pellet-a1-arapellet-15-kg-8437013019019",
-   "estado": "error",
-   "error": "HTTP 403",
-   "disponible": "",
+   "estado": "ok",
+   "error": "",
+   "disponible": "no",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "json-ld+navegador",
+   "iva_incluido": "si",
+   "precio": 6.95,
    "kg": 15.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 463.33,
+   "eur_t_sin": 382.92,
+   "eur_saco": 6.95,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": null
+   "dev_pct": 17.4
   },
   {
    "fuente_id": "bd-fireplus-saco",
@@ -827,20 +851,20 @@
    "certificacion": "ENplus A1",
    "transporte": "incluido",
    "url": "https://www.carrefour.es/pallet-77-sacos-de-pellet-carrefour-15-kg/VC4A-31800050/p",
-   "estado": "error",
-   "error": "no se encontró ningún precio en la página",
-   "disponible": "",
+   "estado": "ok",
+   "error": "",
+   "disponible": "si",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "json-ld+navegador",
+   "iva_incluido": "si",
+   "precio": 445.0,
    "kg": 1155.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 385.28,
+   "eur_t_sin": 318.41,
+   "eur_saco": 5.779,
    "var_pct": null,
    "ref": 390.75,
-   "dev_pct": null
+   "dev_pct": -1.4
   },
   {
    "fuente_id": "amazon-burpellet-saco",
@@ -1287,6 +1311,13 @@
  ],
  "alertas": [
   {
+   "fecha": "2026-11-09T16:13:37",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Amazon · Saco Burpellet 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 503. Revisa la URL o configura un selector."
+  },
+  {
    "fecha": "2026-11-07T12:57:17",
    "nivel": "aviso",
    "regla": "fallo_scraper",
@@ -1575,14 +1606,14 @@
  ],
  "medias": {
   "saco": {
-   "media_con_iva": 462.86,
-   "media_sin_iva": 382.53,
-   "n": 7
+   "media_con_iva": 462.91,
+   "media_sin_iva": 382.58,
+   "n": 8
   },
   "palet": {
-   "media_con_iva": 468.7,
-   "media_sin_iva": 387.35,
-   "n": 6
+   "media_con_iva": 456.78,
+   "media_sin_iva": 377.5,
+   "n": 7
   },
   "granel": {
    "media_con_iva": 278.3,
@@ -1592,9 +1623,9 @@
  },
  "medias_ant": {
   "saco": {
-   "media_con_iva": 579.58,
-   "media_sin_iva": 479.0,
-   "n": 8
+   "media_con_iva": 462.86,
+   "media_sin_iva": 382.53,
+   "n": 7
   },
   "palet": {
    "media_con_iva": 468.7,
