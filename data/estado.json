@@ -1,25 +1,25 @@
 {
  "fallos": {
-  "lm-iberpellet-saco": 6,
-  "lm-naturpellet-saco": 6,
-  "lm-bioforestal-saco": 6,
-  "lm-europellet-saco": 6,
-  "lm-kingfoc-saco": 6,
-  "lm-naturpellet-palet70": 6,
-  "bd-huellaverde-saco": 5,
-  "bd-gme-saco": 5,
-  "bd-arapellet-saco": 2,
-  "bd-fireplus-saco": 5,
-  "bd-coterram-saco": 5,
-  "bauhaus-ecoloma-saco": 6,
-  "obramat-2p-saco": 6,
-  "obramat-asturias-saco": 6,
+  "lm-iberpellet-saco": 7,
+  "lm-naturpellet-saco": 7,
+  "lm-bioforestal-saco": 7,
+  "lm-europellet-saco": 7,
+  "lm-kingfoc-saco": 7,
+  "lm-naturpellet-palet70": 7,
+  "bd-huellaverde-saco": 6,
+  "bd-gme-saco": 6,
+  "bd-arapellet-saco": 3,
+  "bd-fireplus-saco": 0,
+  "bd-coterram-saco": 6,
+  "bauhaus-ecoloma-saco": 7,
+  "obramat-2p-saco": 7,
+  "obramat-asturias-saco": 7,
   "bricoking-saco": 0,
   "alcampo-huellaverde-saco": 0,
   "alcampo-kokido-saco": 0,
-  "eci-eider-saco": 6,
-  "carrefour-palet77": 0,
-  "amazon-burpellet-saco": 0,
+  "eci-eider-saco": 7,
+  "carrefour-palet77": 1,
+  "amazon-burpellet-saco": 1,
   "tiendabiomasa-saco": 0,
   "mansele-palet77": 0,
   "chimeneando-palet70": 0,
@@ -29,11 +29,11 @@
   "caexven-saco": 0,
   "autosolar-saco": 0,
   "autosolar-palet77": 0,
-  "agrotiendas-asturias72": 2,
+  "agrotiendas-asturias72": 3,
   "ecomind-palet70": 0,
   "estufaire-granel": 0,
   "carbonverde-saco": 0,
-  "naturbero-bigbag": 6,
+  "naturbero-bigbag": 7,
   "bioforestal-palet70": 0,
   "vagalume-granel": 0
  },
@@ -45,12 +45,12 @@
   "https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf"
  ],
  "alertas_enviadas": {
-  "da:saco:3T2026:+": "2026-11-13T14:32:16",
-  "da:palet:3T2026:+": "2026-11-13T14:32:16",
-  "da:granel:3T2026:-": "2026-11-13T14:32:16",
-  "po:chimeneando-palet70:368.0": "2026-11-13T14:32:16",
-  "po:estufaire-granel:230.0": "2026-11-13T14:32:16",
-  "po:carbonverde-saco:5.0": "2026-11-13T14:32:16",
+  "da:saco:3T2026:+": "2026-11-17T15:57:38",
+  "da:palet:3T2026:+": "2026-11-17T15:57:38",
+  "da:granel:3T2026:-": "2026-11-17T15:57:38",
+  "po:chimeneando-palet70:368.0": "2026-11-17T15:57:38",
+  "po:estufaire-granel:230.0": "2026-11-17T15:57:38",
+  "po:carbonverde-saco:5.0": "2026-11-17T15:57:38",
   "ss:6": "2026-11-03T08:06:41",
   "vm:saco:+:579.58": "2026-11-05T14:37:17",
   "mo:2026-09:174": "2026-11-05T14:37:17",
@@ -76,7 +76,8 @@
   "fs:amazon-burpellet-saco:2026-11-09": "2026-11-09T16:13:37",
   "vm:saco:+:488.33": "2026-11-15T13:54:28",
   "fs:bd-arapellet-saco:2026-11-15": "2026-11-15T13:54:28",
-  "fs:agrotiendas-asturias72:2026-11-15": "2026-11-15T13:54:28"
+  "fs:agrotiendas-asturias72:2026-11-15": "2026-11-15T13:54:28",
+  "vm:saco:-:462.91": "2026-11-17T15:57:38"
  },
  "historial_alertas": [
   {
@@ -386,7 +387,56 @@
    "regla": "fallo_scraper",
    "titulo": "El lector de «Agrotiendas · Palet 72 sacos Pellets Asturias» falla 2 veces seguidas",
    "detalle": "Último error: HTTP 404. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-17T15:57:38",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) baja 5.2 %",
+   "detalle": "488.33 → 462.91 €/t con IVA (8 puntos)"
+  },
+  {
+   "fecha": "2026-11-17T15:57:38",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado saco 15 kg +17.3 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 462.91 €/t vs índice 394.67 €/t"
+  },
+  {
+   "fecha": "2026-11-17T15:57:38",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado palet +18.6 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 463.32 €/t vs índice 390.75 €/t"
+  },
+  {
+   "fecha": "2026-11-17T15:57:38",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado granel -26.0 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 278.3 €/t vs índice 376.23 €/t"
+  },
+  {
+   "fecha": "2026-11-17T15:57:38",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Chimeneando · Palet 70 sacos ENplus A1 a 350.48 €/t",
+   "detalle": "https://www.chimeneando.com/biomasa/329-pellets-calidad-a1-palets-con-sacos-pellet-15kg.html"
+  },
+  {
+   "fecha": "2026-11-17T15:57:38",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Estufaire / SBI · Pellet a granel (por tonelada) a 278.3 €/t",
+   "detalle": "https://estufaire.cat/es/biomasa/122-pellet-a-granel.html"
+  },
+  {
+   "fecha": "2026-11-17T15:57:38",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Carbón Verde · Saco 15 kg a 5.00 €/saco",
+   "detalle": "https://carbonverde.es/pellets-a-domicilio/"
   }
  ],
- "ultima_ronda": "2026-11-15T13:54:28"
+ "ultima_ronda": "2026-11-17T15:57:38"
 }
