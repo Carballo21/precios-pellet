@@ -1,39 +1,39 @@
 {
  "fallos": {
-  "lm-iberpellet-saco": 7,
-  "lm-naturpellet-saco": 7,
-  "lm-bioforestal-saco": 7,
-  "lm-europellet-saco": 7,
-  "lm-kingfoc-saco": 7,
-  "lm-naturpellet-palet70": 7,
-  "bd-huellaverde-saco": 6,
-  "bd-gme-saco": 6,
-  "bd-arapellet-saco": 3,
-  "bd-fireplus-saco": 0,
-  "bd-coterram-saco": 6,
-  "bauhaus-ecoloma-saco": 7,
-  "obramat-2p-saco": 7,
-  "obramat-asturias-saco": 7,
+  "lm-iberpellet-saco": 8,
+  "lm-naturpellet-saco": 8,
+  "lm-bioforestal-saco": 8,
+  "lm-europellet-saco": 8,
+  "lm-kingfoc-saco": 8,
+  "lm-naturpellet-palet70": 8,
+  "bd-huellaverde-saco": 7,
+  "bd-gme-saco": 7,
+  "bd-arapellet-saco": 4,
+  "bd-fireplus-saco": 1,
+  "bd-coterram-saco": 7,
+  "bauhaus-ecoloma-saco": 8,
+  "obramat-2p-saco": 8,
+  "obramat-asturias-saco": 8,
   "bricoking-saco": 0,
   "alcampo-huellaverde-saco": 0,
   "alcampo-kokido-saco": 0,
-  "eci-eider-saco": 7,
-  "carrefour-palet77": 1,
-  "amazon-burpellet-saco": 1,
+  "eci-eider-saco": 8,
+  "carrefour-palet77": 2,
+  "amazon-burpellet-saco": 0,
   "tiendabiomasa-saco": 0,
   "mansele-palet77": 0,
   "chimeneando-palet70": 0,
-  "manacalor-pelletspor-saco": 0,
-  "manacalor-palet65": 0,
-  "mipelletymas-burpellet72": 0,
+  "manacalor-pelletspor-saco": 1,
+  "manacalor-palet65": 1,
+  "mipelletymas-burpellet72": 1,
   "caexven-saco": 0,
   "autosolar-saco": 0,
   "autosolar-palet77": 0,
-  "agrotiendas-asturias72": 3,
+  "agrotiendas-asturias72": 4,
   "ecomind-palet70": 0,
-  "estufaire-granel": 0,
-  "carbonverde-saco": 0,
-  "naturbero-bigbag": 7,
+  "estufaire-granel": 1,
+  "carbonverde-saco": 1,
+  "naturbero-bigbag": 8,
   "bioforestal-palet70": 0,
   "vagalume-granel": 0
  },
@@ -77,7 +77,11 @@
   "vm:saco:+:488.33": "2026-11-15T13:54:28",
   "fs:bd-arapellet-saco:2026-11-15": "2026-11-15T13:54:28",
   "fs:agrotiendas-asturias72:2026-11-15": "2026-11-15T13:54:28",
-  "vm:saco:-:462.91": "2026-11-17T15:57:38"
+  "vm:saco:-:462.91": "2026-11-17T15:57:38",
+  "vm:saco:+:530.0": "2026-11-19T15:43:50",
+  "vm:palet:+:503.78": "2026-11-19T15:43:50",
+  "mo:2026-09:179": "2026-11-19T15:43:50",
+  "fs:carrefour-palet77:2026-11-19": "2026-11-19T15:43:50"
  },
  "historial_alertas": [
   {
@@ -436,7 +440,35 @@
    "regla": "precio_objetivo",
    "titulo": "Precio objetivo: Carbón Verde · Saco 15 kg a 5.00 €/saco",
    "detalle": "https://carbonverde.es/pellets-a-domicilio/"
+  },
+  {
+   "fecha": "2026-11-19T15:43:50",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) sube 14.5 %",
+   "detalle": "462.91 → 530.0 €/t con IVA (6 puntos)"
+  },
+  {
+   "fecha": "2026-11-19T15:43:50",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (palet) sube 8.7 %",
+   "detalle": "463.32 → 503.78 €/t con IVA (3 puntos)"
+  },
+  {
+   "fecha": "2026-11-19T15:43:50",
+   "nivel": "aviso",
+   "regla": "margen_origen_destino",
+   "titulo": "Diferencial destino − origen: 179 €/t",
+   "detalle": "Media destino sin IVA 430.79 €/t · EXW AVEBIOM 2026-09 ≈ 251.57 €/t"
+  },
+  {
+   "fecha": "2026-11-19T15:43:50",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Carrefour · Palet 77 sacos Carrefour» falla 2 veces seguidas",
+   "detalle": "Último error: no se encontró ningún precio en la página. Revisa la URL o configura un selector."
   }
  ],
- "ultima_ronda": "2026-11-17T15:57:38"
+ "ultima_ronda": "2026-11-19T15:43:50"
 }
