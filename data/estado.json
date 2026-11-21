@@ -1,39 +1,39 @@
 {
  "fallos": {
-  "lm-iberpellet-saco": 8,
-  "lm-naturpellet-saco": 8,
-  "lm-bioforestal-saco": 8,
-  "lm-europellet-saco": 8,
-  "lm-kingfoc-saco": 8,
-  "lm-naturpellet-palet70": 8,
-  "bd-huellaverde-saco": 7,
-  "bd-gme-saco": 7,
-  "bd-arapellet-saco": 4,
-  "bd-fireplus-saco": 1,
-  "bd-coterram-saco": 7,
-  "bauhaus-ecoloma-saco": 8,
-  "obramat-2p-saco": 8,
-  "obramat-asturias-saco": 8,
+  "lm-iberpellet-saco": 9,
+  "lm-naturpellet-saco": 9,
+  "lm-bioforestal-saco": 9,
+  "lm-europellet-saco": 9,
+  "lm-kingfoc-saco": 9,
+  "lm-naturpellet-palet70": 9,
+  "bd-huellaverde-saco": 8,
+  "bd-gme-saco": 8,
+  "bd-arapellet-saco": 5,
+  "bd-fireplus-saco": 2,
+  "bd-coterram-saco": 8,
+  "bauhaus-ecoloma-saco": 9,
+  "obramat-2p-saco": 9,
+  "obramat-asturias-saco": 9,
   "bricoking-saco": 0,
   "alcampo-huellaverde-saco": 0,
   "alcampo-kokido-saco": 0,
-  "eci-eider-saco": 8,
-  "carrefour-palet77": 2,
-  "amazon-burpellet-saco": 0,
+  "eci-eider-saco": 9,
+  "carrefour-palet77": 3,
+  "amazon-burpellet-saco": 1,
   "tiendabiomasa-saco": 0,
   "mansele-palet77": 0,
   "chimeneando-palet70": 0,
-  "manacalor-pelletspor-saco": 1,
-  "manacalor-palet65": 1,
-  "mipelletymas-burpellet72": 1,
+  "manacalor-pelletspor-saco": 0,
+  "manacalor-palet65": 0,
+  "mipelletymas-burpellet72": 0,
   "caexven-saco": 0,
   "autosolar-saco": 0,
   "autosolar-palet77": 0,
-  "agrotiendas-asturias72": 4,
+  "agrotiendas-asturias72": 5,
   "ecomind-palet70": 0,
-  "estufaire-granel": 1,
-  "carbonverde-saco": 1,
-  "naturbero-bigbag": 8,
+  "estufaire-granel": 0,
+  "carbonverde-saco": 0,
+  "naturbero-bigbag": 9,
   "bioforestal-palet70": 0,
   "vagalume-granel": 0
  },
@@ -67,7 +67,7 @@
   "fs:carrefour-palet77:2026-11-05": "2026-11-05T14:37:17",
   "fs:naturbero-bigbag:2026-11-05": "2026-11-05T14:37:17",
   "av:https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf": "2026-11-05T14:37:17",
-  "vm:saco:-:462.86": "2026-11-07T12:57:17",
+  "vm:saco:-:462.86": "2026-11-21T14:37:30",
   "fs:bd-huellaverde-saco:2026-11-07": "2026-11-07T12:57:17",
   "fs:bd-gme-saco:2026-11-07": "2026-11-07T12:57:17",
   "fs:bd-arapellet-saco:2026-11-07": "2026-11-07T12:57:17",
@@ -81,7 +81,9 @@
   "vm:saco:+:530.0": "2026-11-19T15:43:50",
   "vm:palet:+:503.78": "2026-11-19T15:43:50",
   "mo:2026-09:179": "2026-11-19T15:43:50",
-  "fs:carrefour-palet77:2026-11-19": "2026-11-19T15:43:50"
+  "fs:carrefour-palet77:2026-11-19": "2026-11-19T15:43:50",
+  "vm:palet:-:463.32": "2026-11-21T14:37:30",
+  "fs:bd-fireplus-saco:2026-11-21": "2026-11-21T14:37:30"
  },
  "historial_alertas": [
   {
@@ -468,7 +470,28 @@
    "regla": "fallo_scraper",
    "titulo": "El lector de «Carrefour · Palet 77 sacos Carrefour» falla 2 veces seguidas",
    "detalle": "Último error: no se encontró ningún precio en la página. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-21T14:37:30",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) baja 12.7 %",
+   "detalle": "530.0 → 462.86 €/t con IVA (7 puntos)"
+  },
+  {
+   "fecha": "2026-11-21T14:37:30",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (palet) baja 8.0 %",
+   "detalle": "503.78 → 463.32 €/t con IVA (5 puntos)"
+  },
+  {
+   "fecha": "2026-11-21T14:37:30",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Fireplus 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
   }
  ],
- "ultima_ronda": "2026-11-19T15:43:50"
+ "ultima_ronda": "2026-11-21T14:37:30"
 }

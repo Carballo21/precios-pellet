@@ -1,7 +1,7 @@
 {
  "titulo": "Monitor de precios del pellet · España",
- "ultima_ronda": "2026-11-19T15:43:50",
- "num_rondas": 8,
+ "ultima_ronda": "2026-11-21T14:37:30",
+ "num_rondas": 9,
  "ipb_vigente": {
   "trimestre": "3T2026",
   "inicio": "2026-07-01",
@@ -23,20 +23,26 @@
  },
  "kpis": {
   "saco": {
-   "valor": 530.0,
-   "n": 6,
+   "valor": 462.86,
+   "n": 7,
    "ref": 394.67,
-   "dev_pct": 34.3,
-   "var_pct": 14.5
+   "dev_pct": 17.3,
+   "var_pct": -12.7
   },
   "palet": {
-   "valor": 503.78,
-   "n": 3,
+   "valor": 463.32,
+   "n": 5,
    "ref": 390.75,
-   "dev_pct": 28.9,
-   "var_pct": 8.7
+   "dev_pct": 18.6,
+   "var_pct": -8.0
   },
-  "granel": null,
+  "granel": {
+   "valor": 278.3,
+   "n": 1,
+   "ref": 376.23,
+   "dev_pct": -26.0,
+   "var_pct": null
+  },
   "exw": {
    "mes": "2026-09",
    "indice_pct": 143.5,
@@ -44,9 +50,9 @@
    "prevision": false,
    "fuente": "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf"
   },
-  "destino_sin_iva": 430.79,
-  "margen": 179.22,
-  "leidos": 11,
+  "destino_sin_iva": 370.94,
+  "margen": 119.37,
+  "leidos": 15,
   "total": 36
  },
  "mercado": {
@@ -98,6 +104,12 @@
     "y": 530.0,
     "n": 6,
     "ronda": "2026-11-19T15:43:50"
+   },
+   {
+    "x": "2026-11-21",
+    "y": 462.86,
+    "n": 7,
+    "ronda": "2026-11-21T14:37:30"
    }
   ],
   "palet": [
@@ -148,6 +160,12 @@
     "y": 503.78,
     "n": 3,
     "ronda": "2026-11-19T15:43:50"
+   },
+   {
+    "x": "2026-11-21",
+    "y": 463.32,
+    "n": 5,
+    "ronda": "2026-11-21T14:37:30"
    }
   ],
   "granel": [
@@ -192,6 +210,12 @@
     "y": 278.3,
     "n": 1,
     "ronda": "2026-11-17T15:57:38"
+   },
+   {
+    "x": "2026-11-21",
+    "y": 278.3,
+    "n": 1,
+    "ronda": "2026-11-21T14:37:30"
    }
   ],
   "origen": [
@@ -242,6 +266,12 @@
     "y": 383.31,
     "n": 2,
     "ronda": "2026-11-19T15:43:50"
+   },
+   {
+    "x": "2026-11-21",
+    "y": 383.31,
+    "n": 2,
+    "ronda": "2026-11-21T14:37:30"
    }
   ]
  },
@@ -961,20 +991,20 @@
    "certificacion": "ENplus A1",
    "transporte": "incluido",
    "url": "https://www.amazon.es/Burpellet-Saco-Pellets-15-kg/dp/B00QFNXUIK",
-   "estado": "ok",
-   "error": "",
+   "estado": "error",
+   "error": "HTTP 503",
    "disponible": "",
    "sospechoso": "no",
-   "metodo": "texto",
-   "iva_incluido": "si",
-   "precio": 10.0,
+   "metodo": "",
+   "iva_incluido": "",
+   "precio": null,
    "kg": 15.0,
-   "eur_t": 666.67,
-   "eur_t_sin": 550.96,
-   "eur_saco": 10.0,
+   "eur_t": null,
+   "eur_t_sin": null,
+   "eur_saco": null,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": 68.9
+   "dev_pct": null
   },
   {
    "fuente_id": "tiendabiomasa-saco",
@@ -1065,20 +1095,20 @@
    "certificacion": "ENplus A1",
    "transporte": "aparte",
    "url": "https://manacalor.es/pellets/saco-de-pellets/saco-pellet-pelletspor-15-kg/",
-   "estado": "error",
-   "error": "ConnectTimeout",
+   "estado": "ok",
+   "error": "",
    "disponible": "",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "texto",
+   "iva_incluido": "si",
+   "precio": 5.9,
    "kg": 15.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 393.33,
+   "eur_t_sin": 325.07,
+   "eur_saco": 5.9,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": null
+   "dev_pct": -0.3
   },
   {
    "fuente_id": "manacalor-palet65",
@@ -1091,20 +1121,20 @@
    "certificacion": "ENplus A1",
    "transporte": "aparte",
    "url": "https://manacalor.es/pellets/saco-de-pellets/palet-de-pellets-galpellet-77-uds-530-saco-iva-incluido/",
-   "estado": "error",
-   "error": "ConnectTimeout",
+   "estado": "ok",
+   "error": "",
    "disponible": "",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "texto",
+   "iva_incluido": "si",
+   "precio": 408.0,
    "kg": 975.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 418.46,
+   "eur_t_sin": 345.84,
+   "eur_saco": 6.277,
    "var_pct": null,
    "ref": 390.75,
-   "dev_pct": null
+   "dev_pct": 7.1
   },
   {
    "fuente_id": "mipelletymas-burpellet72",
@@ -1117,20 +1147,20 @@
    "certificacion": "ENplus A1",
    "transporte": "desconocido",
    "url": "https://mipelletymas.com/producto/burpellet-72-sacos/",
-   "estado": "error",
-   "error": "HTTP 403",
-   "disponible": "",
+   "estado": "ok",
+   "error": "",
+   "disponible": "si",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "json-ld",
+   "iva_incluido": "si",
+   "precio": 417.75,
    "kg": 1080.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 386.81,
+   "eur_t_sin": 319.67,
+   "eur_saco": 5.802,
    "var_pct": null,
    "ref": 390.75,
-   "dev_pct": null
+   "dev_pct": -1.0
   },
   {
    "fuente_id": "caexven-saco",
@@ -1273,20 +1303,20 @@
    "certificacion": "ENplus A1",
    "transporte": "incluido",
    "url": "https://estufaire.cat/es/biomasa/122-pellet-a-granel.html",
-   "estado": "error",
-   "error": "HTTP 403",
+   "estado": "ok",
+   "error": "",
    "disponible": "",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "texto",
+   "iva_incluido": "no",
+   "precio": 230.0,
    "kg": 1000.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 278.3,
+   "eur_t_sin": 230.0,
+   "eur_saco": 4.175,
    "var_pct": null,
    "ref": 376.23,
-   "dev_pct": null
+   "dev_pct": -26.0
   },
   {
    "fuente_id": "carbonverde-saco",
@@ -1299,20 +1329,20 @@
    "certificacion": "ENplus A1",
    "transporte": "aparte",
    "url": "https://carbonverde.es/pellets-a-domicilio/",
-   "estado": "error",
-   "error": "HTTP 403",
+   "estado": "ok",
+   "error": "",
    "disponible": "",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "regex",
+   "iva_incluido": "si",
+   "precio": 5.0,
    "kg": 15.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 333.33,
+   "eur_t_sin": 275.48,
+   "eur_saco": 5.0,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": null
+   "dev_pct": -15.5
   },
   {
    "fuente_id": "naturbero-bigbag",
@@ -1326,7 +1356,7 @@
    "transporte": "incluido",
    "url": "https://www.naturbero.com/producto/big-bag-de-pellet-1000-kgs",
    "estado": "error",
-   "error": "ConnectTimeout",
+   "error": "robots.txt no permite leer esta página",
    "disponible": "",
    "sospechoso": "no",
    "metodo": "",
@@ -1394,6 +1424,27 @@
   }
  ],
  "alertas": [
+  {
+   "fecha": "2026-11-21T14:37:30",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Brico Depôt · Saco A1+ Fireplus 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-21T14:37:30",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (palet) baja 8.0 %",
+   "detalle": "503.78 → 463.32 €/t con IVA (5 puntos)"
+  },
+  {
+   "fecha": "2026-11-21T14:37:30",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) baja 12.7 %",
+   "detalle": "530.0 → 462.86 €/t con IVA (7 puntos)"
+  },
   {
    "fecha": "2026-11-19T15:43:50",
    "nivel": "aviso",
@@ -1652,27 +1703,6 @@
    "regla": "fallo_scraper",
    "titulo": "El lector de «El Corte Inglés (Bricor) · Saco Pellets 15 kg EN Plus A-1 (Eider)» falla 2 veces seguidas",
    "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
-  },
-  {
-   "fecha": "2026-11-05T14:37:17",
-   "nivel": "aviso",
-   "regla": "fallo_scraper",
-   "titulo": "El lector de «Obramat · Pellet Asturias 15 kg» falla 2 veces seguidas",
-   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
-  },
-  {
-   "fecha": "2026-11-05T14:37:17",
-   "nivel": "aviso",
-   "regla": "fallo_scraper",
-   "titulo": "El lector de «Obramat · Pellet 2P 15 kg» falla 2 veces seguidas",
-   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
-  },
-  {
-   "fecha": "2026-11-05T14:37:17",
-   "nivel": "aviso",
-   "regla": "fallo_scraper",
-   "titulo": "El lector de «Bauhaus · Pellets Ecoloma 15 kg» falla 2 veces seguidas",
-   "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
   }
  ],
  "reglas": [
@@ -1725,21 +1755,9 @@
  ],
  "medias": {
   "saco": {
-   "media_con_iva": 530.0,
-   "media_sin_iva": 438.02,
-   "n": 6
-  },
-  "palet": {
-   "media_con_iva": 503.78,
-   "media_sin_iva": 416.35,
-   "n": 3
-  }
- },
- "medias_ant": {
-  "saco": {
-   "media_con_iva": 462.91,
-   "media_sin_iva": 382.58,
-   "n": 8
+   "media_con_iva": 462.86,
+   "media_sin_iva": 382.53,
+   "n": 7
   },
   "palet": {
    "media_con_iva": 463.32,
@@ -1750,6 +1768,18 @@
    "media_con_iva": 278.3,
    "media_sin_iva": 230.0,
    "n": 1
+  }
+ },
+ "medias_ant": {
+  "saco": {
+   "media_con_iva": 530.0,
+   "media_sin_iva": 438.02,
+   "n": 6
+  },
+  "palet": {
+   "media_con_iva": 503.78,
+   "media_sin_iva": 416.35,
+   "n": 3
   }
  }
 }
