@@ -1,25 +1,25 @@
 {
  "fallos": {
-  "lm-iberpellet-saco": 9,
-  "lm-naturpellet-saco": 9,
-  "lm-bioforestal-saco": 9,
-  "lm-europellet-saco": 9,
-  "lm-kingfoc-saco": 9,
-  "lm-naturpellet-palet70": 9,
-  "bd-huellaverde-saco": 8,
-  "bd-gme-saco": 8,
-  "bd-arapellet-saco": 5,
-  "bd-fireplus-saco": 2,
-  "bd-coterram-saco": 8,
-  "bauhaus-ecoloma-saco": 9,
-  "obramat-2p-saco": 9,
-  "obramat-asturias-saco": 9,
+  "lm-iberpellet-saco": 10,
+  "lm-naturpellet-saco": 10,
+  "lm-bioforestal-saco": 10,
+  "lm-europellet-saco": 10,
+  "lm-kingfoc-saco": 10,
+  "lm-naturpellet-palet70": 10,
+  "bd-huellaverde-saco": 9,
+  "bd-gme-saco": 9,
+  "bd-arapellet-saco": 6,
+  "bd-fireplus-saco": 0,
+  "bd-coterram-saco": 9,
+  "bauhaus-ecoloma-saco": 10,
+  "obramat-2p-saco": 10,
+  "obramat-asturias-saco": 10,
   "bricoking-saco": 0,
   "alcampo-huellaverde-saco": 0,
   "alcampo-kokido-saco": 0,
-  "eci-eider-saco": 9,
-  "carrefour-palet77": 3,
-  "amazon-burpellet-saco": 1,
+  "eci-eider-saco": 10,
+  "carrefour-palet77": 4,
+  "amazon-burpellet-saco": 2,
   "tiendabiomasa-saco": 0,
   "mansele-palet77": 0,
   "chimeneando-palet70": 0,
@@ -29,11 +29,11 @@
   "caexven-saco": 0,
   "autosolar-saco": 0,
   "autosolar-palet77": 0,
-  "agrotiendas-asturias72": 5,
+  "agrotiendas-asturias72": 6,
   "ecomind-palet70": 0,
   "estufaire-granel": 0,
   "carbonverde-saco": 0,
-  "naturbero-bigbag": 9,
+  "naturbero-bigbag": 10,
   "bioforestal-palet70": 0,
   "vagalume-granel": 0
  },
@@ -45,12 +45,12 @@
   "https://avebiom.org/wp-content/uploads/2026/11/EXW_pellet_NOV_2026_AVEBIOM.pdf"
  ],
  "alertas_enviadas": {
-  "da:saco:3T2026:+": "2026-11-17T15:57:38",
-  "da:palet:3T2026:+": "2026-11-17T15:57:38",
-  "da:granel:3T2026:-": "2026-11-17T15:57:38",
-  "po:chimeneando-palet70:368.0": "2026-11-17T15:57:38",
-  "po:estufaire-granel:230.0": "2026-11-17T15:57:38",
-  "po:carbonverde-saco:5.0": "2026-11-17T15:57:38",
+  "da:saco:3T2026:+": "2026-11-23T18:02:25",
+  "da:palet:3T2026:+": "2026-11-23T18:02:25",
+  "da:granel:3T2026:-": "2026-11-23T18:02:25",
+  "po:chimeneando-palet70:368.0": "2026-11-23T18:02:25",
+  "po:estufaire-granel:230.0": "2026-11-23T18:02:25",
+  "po:carbonverde-saco:5.0": "2026-11-23T18:02:25",
   "ss:6": "2026-11-03T08:06:41",
   "vm:saco:+:579.58": "2026-11-05T14:37:17",
   "mo:2026-09:174": "2026-11-05T14:37:17",
@@ -83,7 +83,9 @@
   "mo:2026-09:179": "2026-11-19T15:43:50",
   "fs:carrefour-palet77:2026-11-19": "2026-11-19T15:43:50",
   "vm:palet:-:463.32": "2026-11-21T14:37:30",
-  "fs:bd-fireplus-saco:2026-11-21": "2026-11-21T14:37:30"
+  "fs:bd-fireplus-saco:2026-11-21": "2026-11-21T14:37:30",
+  "vp:mipelletymas-burpellet72:+:490.64": "2026-11-23T18:02:25",
+  "fs:amazon-burpellet-saco:2026-11-23": "2026-11-23T18:02:25"
  },
  "historial_alertas": [
   {
@@ -491,7 +493,63 @@
    "regla": "fallo_scraper",
    "titulo": "El lector de «Brico Depôt · Saco A1+ Fireplus 15 kg» falla 2 veces seguidas",
    "detalle": "Último error: HTTP 403. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-23T18:02:25",
+   "nivel": "aviso",
+   "regla": "variacion_punto",
+   "titulo": "Mi Pellet y Más · Palet 72 sacos Burpellet: sube 17.4 %",
+   "detalle": "417.75 € → 490.64 €  (454.3 €/t con IVA)"
+  },
+  {
+   "fecha": "2026-11-23T18:02:25",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado saco 15 kg +17.3 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 462.91 €/t vs índice 394.67 €/t"
+  },
+  {
+   "fecha": "2026-11-23T18:02:25",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado palet +22.0 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 476.82 €/t vs índice 390.75 €/t"
+  },
+  {
+   "fecha": "2026-11-23T18:02:25",
+   "nivel": "aviso",
+   "regla": "desviacion_avebiom",
+   "titulo": "Mercado granel -26.0 % frente a AVEBIOM 3T2026",
+   "detalle": "Media 278.3 €/t vs índice 376.23 €/t"
+  },
+  {
+   "fecha": "2026-11-23T18:02:25",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Chimeneando · Palet 70 sacos ENplus A1 a 350.48 €/t",
+   "detalle": "https://www.chimeneando.com/biomasa/329-pellets-calidad-a1-palets-con-sacos-pellet-15kg.html"
+  },
+  {
+   "fecha": "2026-11-23T18:02:25",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Estufaire / SBI · Pellet a granel (por tonelada) a 278.3 €/t",
+   "detalle": "https://estufaire.cat/es/biomasa/122-pellet-a-granel.html"
+  },
+  {
+   "fecha": "2026-11-23T18:02:25",
+   "nivel": "info",
+   "regla": "precio_objetivo",
+   "titulo": "Precio objetivo: Carbón Verde · Saco 15 kg a 5.00 €/saco",
+   "detalle": "https://carbonverde.es/pellets-a-domicilio/"
+  },
+  {
+   "fecha": "2026-11-23T18:02:25",
+   "nivel": "aviso",
+   "regla": "fallo_scraper",
+   "titulo": "El lector de «Amazon · Saco Burpellet 15 kg» falla 2 veces seguidas",
+   "detalle": "Último error: HTTP 503. Revisa la URL o configura un selector."
   }
  ],
- "ultima_ronda": "2026-11-21T14:37:30"
+ "ultima_ronda": "2026-11-23T18:02:25"
 }
