@@ -1,7 +1,7 @@
 {
  "titulo": "Monitor de precios del pellet · España",
- "ultima_ronda": "2026-11-23T18:02:25",
- "num_rondas": 10,
+ "ultima_ronda": "2026-11-25T17:10:31",
+ "num_rondas": 11,
  "ipb_vigente": {
   "trimestre": "3T2026",
   "inicio": "2026-07-01",
@@ -23,18 +23,18 @@
  },
  "kpis": {
   "saco": {
-   "valor": 462.91,
-   "n": 8,
+   "valor": 483.33,
+   "n": 10,
    "ref": 394.67,
-   "dev_pct": 17.3,
-   "var_pct": 0.0
+   "dev_pct": 22.5,
+   "var_pct": 4.4
   },
   "palet": {
    "valor": 476.82,
    "n": 5,
    "ref": 390.75,
    "dev_pct": 22.0,
-   "var_pct": 2.9
+   "var_pct": 0.0
   },
   "granel": {
    "valor": 278.3,
@@ -50,9 +50,9 @@
    "prevision": false,
    "fuente": "https://avebiom.org/wp-content/uploads/2026/10/EXW_pellet_OCT_2026_AVEBIOM.pdf"
   },
-  "destino_sin_iva": 375.78,
-  "margen": 124.21,
-  "leidos": 16,
+  "destino_sin_iva": 387.18,
+  "margen": 135.61,
+  "leidos": 18,
   "total": 36
  },
  "mercado": {
@@ -116,6 +116,12 @@
     "y": 462.91,
     "n": 8,
     "ronda": "2026-11-23T18:02:25"
+   },
+   {
+    "x": "2026-11-25",
+    "y": 483.33,
+    "n": 10,
+    "ronda": "2026-11-25T17:10:31"
    }
   ],
   "palet": [
@@ -178,6 +184,12 @@
     "y": 476.82,
     "n": 5,
     "ronda": "2026-11-23T18:02:25"
+   },
+   {
+    "x": "2026-11-25",
+    "y": 476.82,
+    "n": 5,
+    "ronda": "2026-11-25T17:10:31"
    }
   ],
   "granel": [
@@ -234,6 +246,12 @@
     "y": 278.3,
     "n": 1,
     "ronda": "2026-11-23T18:02:25"
+   },
+   {
+    "x": "2026-11-25",
+    "y": 278.3,
+    "n": 1,
+    "ronda": "2026-11-25T17:10:31"
    }
   ],
   "origen": [
@@ -296,6 +314,12 @@
     "y": 383.31,
     "n": 2,
     "ronda": "2026-11-23T18:02:25"
+   },
+   {
+    "x": "2026-11-25",
+    "y": 383.31,
+    "n": 2,
+    "ronda": "2026-11-25T17:10:31"
    }
   ]
  },
@@ -766,7 +790,7 @@
    "eur_t": 463.33,
    "eur_t_sin": 382.92,
    "eur_saco": 6.95,
-   "var_pct": null,
+   "var_pct": 0.0,
    "ref": 394.67,
    "dev_pct": 17.4
   },
@@ -781,20 +805,20 @@
    "certificacion": "ENplus A1",
    "transporte": "recogida",
    "url": "https://www.bricodepot.es/saco-pellet-a1-coterram-15-kg-8425402028797",
-   "estado": "error",
-   "error": "HTTP 403",
-   "disponible": "",
+   "estado": "ok",
+   "error": "",
+   "disponible": "no",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "json-ld+navegador",
+   "iva_incluido": "si",
+   "precio": 6.95,
    "kg": 15.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 463.33,
+   "eur_t_sin": 382.92,
+   "eur_saco": 6.95,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": null
+   "dev_pct": 17.4
   },
   {
    "fuente_id": "bauhaus-ecoloma-saco",
@@ -1015,20 +1039,20 @@
    "certificacion": "ENplus A1",
    "transporte": "incluido",
    "url": "https://www.amazon.es/Burpellet-Saco-Pellets-15-kg/dp/B00QFNXUIK",
-   "estado": "error",
-   "error": "HTTP 503",
+   "estado": "ok",
+   "error": "",
    "disponible": "",
    "sospechoso": "no",
-   "metodo": "",
-   "iva_incluido": "",
-   "precio": null,
+   "metodo": "texto",
+   "iva_incluido": "si",
+   "precio": 10.0,
    "kg": 15.0,
-   "eur_t": null,
-   "eur_t_sin": null,
-   "eur_saco": null,
+   "eur_t": 666.67,
+   "eur_t_sin": 550.96,
+   "eur_saco": 10.0,
    "var_pct": null,
    "ref": 394.67,
-   "dev_pct": null
+   "dev_pct": 68.9
   },
   {
    "fuente_id": "tiendabiomasa-saco",
@@ -1182,7 +1206,7 @@
    "eur_t": 454.3,
    "eur_t_sin": 375.45,
    "eur_saco": 6.814,
-   "var_pct": 17.4,
+   "var_pct": 0.0,
    "ref": 390.75,
    "dev_pct": 16.3
   },
@@ -1276,7 +1300,7 @@
    "transporte": "incluido",
    "url": "https://www.agrotiendas.es/inicio/1256-pellets-asturias-palet-72-sacos-41050-12020-de-porte.html",
    "estado": "error",
-   "error": "ReadTimeout",
+   "error": "HTTP 404",
    "disponible": "",
    "sospechoso": "no",
    "metodo": "",
@@ -1448,6 +1472,13 @@
   }
  ],
  "alertas": [
+  {
+   "fecha": "2026-11-25T17:10:31",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) sube 4.4 %",
+   "detalle": "462.91 → 483.33 €/t con IVA (10 puntos)"
+  },
   {
    "fecha": "2026-11-23T18:02:25",
    "nivel": "aviso",
@@ -1720,13 +1751,6 @@
    "regla": "precio_objetivo",
    "titulo": "Precio objetivo: Estufaire / SBI · Pellet a granel (por tonelada) a 278.3 €/t",
    "detalle": "https://estufaire.cat/es/biomasa/122-pellet-a-granel.html"
-  },
-  {
-   "fecha": "2026-11-07T12:57:17",
-   "nivel": "info",
-   "regla": "precio_objetivo",
-   "titulo": "Precio objetivo: Chimeneando · Palet 70 sacos ENplus A1 a 350.48 €/t",
-   "detalle": "https://www.chimeneando.com/biomasa/329-pellets-calidad-a1-palets-con-sacos-pellet-15kg.html"
   }
  ],
  "reglas": [
@@ -1779,9 +1803,9 @@
  ],
  "medias": {
   "saco": {
-   "media_con_iva": 462.91,
-   "media_sin_iva": 382.58,
-   "n": 8
+   "media_con_iva": 483.33,
+   "media_sin_iva": 399.45,
+   "n": 10
   },
   "palet": {
    "media_con_iva": 476.82,
@@ -1796,13 +1820,13 @@
  },
  "medias_ant": {
   "saco": {
-   "media_con_iva": 462.86,
-   "media_sin_iva": 382.53,
-   "n": 7
+   "media_con_iva": 462.91,
+   "media_sin_iva": 382.58,
+   "n": 8
   },
   "palet": {
-   "media_con_iva": 463.32,
-   "media_sin_iva": 382.91,
+   "media_con_iva": 476.82,
+   "media_sin_iva": 394.07,
    "n": 5
   },
   "granel": {

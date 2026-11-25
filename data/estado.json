@@ -1,25 +1,25 @@
 {
  "fallos": {
-  "lm-iberpellet-saco": 10,
-  "lm-naturpellet-saco": 10,
-  "lm-bioforestal-saco": 10,
-  "lm-europellet-saco": 10,
-  "lm-kingfoc-saco": 10,
-  "lm-naturpellet-palet70": 10,
-  "bd-huellaverde-saco": 9,
-  "bd-gme-saco": 9,
-  "bd-arapellet-saco": 6,
+  "lm-iberpellet-saco": 11,
+  "lm-naturpellet-saco": 11,
+  "lm-bioforestal-saco": 11,
+  "lm-europellet-saco": 11,
+  "lm-kingfoc-saco": 11,
+  "lm-naturpellet-palet70": 11,
+  "bd-huellaverde-saco": 10,
+  "bd-gme-saco": 10,
+  "bd-arapellet-saco": 7,
   "bd-fireplus-saco": 0,
-  "bd-coterram-saco": 9,
-  "bauhaus-ecoloma-saco": 10,
-  "obramat-2p-saco": 10,
-  "obramat-asturias-saco": 10,
+  "bd-coterram-saco": 0,
+  "bauhaus-ecoloma-saco": 11,
+  "obramat-2p-saco": 11,
+  "obramat-asturias-saco": 11,
   "bricoking-saco": 0,
   "alcampo-huellaverde-saco": 0,
   "alcampo-kokido-saco": 0,
-  "eci-eider-saco": 10,
-  "carrefour-palet77": 4,
-  "amazon-burpellet-saco": 2,
+  "eci-eider-saco": 11,
+  "carrefour-palet77": 5,
+  "amazon-burpellet-saco": 0,
   "tiendabiomasa-saco": 0,
   "mansele-palet77": 0,
   "chimeneando-palet70": 0,
@@ -29,11 +29,11 @@
   "caexven-saco": 0,
   "autosolar-saco": 0,
   "autosolar-palet77": 0,
-  "agrotiendas-asturias72": 6,
+  "agrotiendas-asturias72": 7,
   "ecomind-palet70": 0,
   "estufaire-granel": 0,
   "carbonverde-saco": 0,
-  "naturbero-bigbag": 10,
+  "naturbero-bigbag": 11,
   "bioforestal-palet70": 0,
   "vagalume-granel": 0
  },
@@ -85,7 +85,8 @@
   "vm:palet:-:463.32": "2026-11-21T14:37:30",
   "fs:bd-fireplus-saco:2026-11-21": "2026-11-21T14:37:30",
   "vp:mipelletymas-burpellet72:+:490.64": "2026-11-23T18:02:25",
-  "fs:amazon-burpellet-saco:2026-11-23": "2026-11-23T18:02:25"
+  "fs:amazon-burpellet-saco:2026-11-23": "2026-11-23T18:02:25",
+  "vm:saco:+:483.33": "2026-11-25T17:10:31"
  },
  "historial_alertas": [
   {
@@ -549,7 +550,14 @@
    "regla": "fallo_scraper",
    "titulo": "El lector de «Amazon · Saco Burpellet 15 kg» falla 2 veces seguidas",
    "detalle": "Último error: HTTP 503. Revisa la URL o configura un selector."
+  },
+  {
+   "fecha": "2026-11-25T17:10:31",
+   "nivel": "importante",
+   "regla": "variacion_media",
+   "titulo": "Media del mercado (saco 15 kg) sube 4.4 %",
+   "detalle": "462.91 → 483.33 €/t con IVA (10 puntos)"
   }
  ],
- "ultima_ronda": "2026-11-23T18:02:25"
+ "ultima_ronda": "2026-11-25T17:10:31"
 }
